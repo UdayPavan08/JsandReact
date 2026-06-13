@@ -465,52 +465,80 @@ const { stdin } = require("process");
 // console.log("Age:", age);
 
 
-// create a simple calculator that can perform addition, subtraction, multiplication, and division based on user input. Can you help me with that?
+//  create a simple calculator that can perform addition, subtraction, multiplication, and division based on user input. Can you help me with that?
 
 
 const readlineSync = require('readline-sync');
 
-function calculator() {
-    const num1 = parseFloat(readlineSync.question("Enter the first number: "));
-    const num2 = parseFloat(readlineSync.question("Enter the second number: "));
-    const operator = readlineSync.question("Enter an operator (+, -, *, /): ");  
+// function calculator() {
+//     const num1 = parseFloat(readlineSync.question("Enter the first number: "));
+//     const num2 = parseFloat(readlineSync.question("Enter the second number: "));
+//     const operator = readlineSync.question("Enter an operator (+, -, *, /): ");  
 
-    // Validate input
-    if (isNaN(num1) || isNaN(num2)) {
-        console.log("Invalid input. Please enter valid numbers.");
-        return;
-    }
-    // Perform calculation based on operator
-    else {
-        let result;
+//     // Validate input
+//     if (isNaN(num1) || isNaN(num2)) {
+//         console.log("Invalid input. Please enter valid numbers.");
+//         return;
+//     }
+//     // Perform calculation based on operator
+//     else {
+//         let result;
         
-        // Use a switch statement to handle different operators
-        switch (operator) {
-            case '+':
-                result = num1 + num2;
-                break;
-            case '-':
-                result = num1 - num2;
-                break;
-            case '*':
-                result = num1 * num2;
-                break;
-            case '/':
-                if (num2 === 0) {
-                    console.log("Error: Division by zero is not allowed.");
-                    return;
-                }
-                result = num1 / num2;
-                break;
+//         // Use a switch statement to handle different operators
+//         switch (operator) {
+//             case '+':
+//                 result = num1 + num2;
+//                 break;
+//             case '-':
+//                 result = num1 - num2;
+//                 break;
+//             case '*':
+//                 result = num1 * num2;
+//                 break;
+//             case '/':
+//                 if (num2 === 0) {
+//                     console.log("Error: Division by zero is not allowed.");
+//                     return;
+//                 }
+//                 result = num1 / num2;
+//                 break;
 
-                // Handle invalid operator input
-            default:
-                console.log("Invalid operator. Please enter +, -, *, or /.");
-                return;
-        }
-        console.log("Result:", result);
+//                 // Handle invalid operator input
+//             default:
+//                 console.log("Invalid operator. Please enter +, -, *, or /.");
+//                 return;
+//         }
+//         console.log("Result:", result);
+//     }
+// }
+
+// // Call the calculator function to run the program
+// calculator(); 
+
+
+
+//reverse a string using built-in methods
+// function reverseString(str) {
+//     return str.split('').reverse().join('');
+// }
+
+// console.log(reverseString("Hello World")); // Output: "dlroW olleH"
+
+//reverse a string using a loop
+function reverseStringloop(str) {
+    let reversed = '';
+    for (let i=str.length - 1; i>=0; i--){
+      reversed = reversed + str[i];
     }
+    return reversed;
 }
 
-// Call the calculator function to run the program
-calculator(); 
+//take input from user and reverse the string
+let input = readlineSync.question("Enter a string: ");
+console.log(reverseStringloop(input));
+
+//test the function with a sample string
+console.log(reverseStringloop("Hello World")); 
+
+
+//reverse a string using recursion
