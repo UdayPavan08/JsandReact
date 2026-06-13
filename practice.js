@@ -1,0 +1,463 @@
+// let readline = require('readline');
+
+// const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+// });
+
+// function sayHello(name) {
+//     console.log(`Hello, ${name}!`);
+// }
+
+// function sayGoodbye(name) {
+//     console.log(`Goodbye, ${name}!`);
+// }
+
+// let name = "Uday";
+
+// rl.question("Are you leaving? (yes/no)", (answer) => {
+//     let isLeaving = answer.toLowerCase() === "yes";
+//     isLeaving ? sayGoodbye(name) : sayHello(name);
+//     rl.close();
+// })
+
+// let n1, n2;
+// const res = (n1=1, n2= 10, n1 + n2);
+// console.log(res);
+
+// function f1(){
+//     console.log("one");
+//     return "one";
+// }
+
+// function f2(){
+//     console.log("two");
+//     return "two";
+// }
+
+// function f3(){
+//     console.log("three");
+//     return "three";
+// };
+
+// let x = (f1(), f2(), f3());
+// console.log(x);
+
+// let n = 10;
+
+// console.log(n++)
+// console.log(++n)
+
+// let a = 10;
+// let b = 20;
+
+// console.log(a+b);
+// console.log(a+=b);
+// console.log(a-=b);
+// console.log(a*=b);
+// console.log(a/=b);
+
+// if(a>0){
+//     console.log("The number is positive");
+// }else{
+//     console.log("The number is negative");
+// }
+
+// const readline = require("readline");
+
+// //create an interface to take input from terminal
+// const r1 = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
+
+// //Ask user for input
+// r1.question("Enter a number:", (answer) => {
+
+//     //convert string to number
+//     let num = Number(answer);
+
+//   if (num < 0) {
+//     console.log("Enter a positive number");
+//   } else {
+//     switch (true) {
+//       case num === 0:
+//         console.log("Number is zero");
+//         break;
+//       case num != 0 && num <= 50:
+//         console.log("Number is between 1-50");
+//         break;
+//       case num >= 51 && num < 100:
+//         console.log("Number is between 51-100");
+//         break;
+//       default:
+//         console.log("Number is 100");
+//     }
+//   }
+//   r1.close();
+// });
+
+// let x ;
+// for (let i = x^0 === 1 ; i <= 10; i++) {
+//   console.log(i);
+// }
+
+// let x = 10;
+// for(let i=0; i<x; i++){
+//     console.log("Value of x:" + (i+1));
+// }
+
+// let num = 50;
+// for(let i=1; i<num; i++){
+//     let res = i%2===0 ? i :"No even numbers" ;
+//     console.log(res);
+// }
+
+// let numArr=[1,4,7,34,8];
+// let largest=numArr[0];
+// for(let i=0; i<numArr.length; i++){
+//     if(numArr[i]>largest){
+//         largest=numArr[i];
+//     }
+// }
+
+// console.log("Largest number is: " + largest);
+
+// const str = "Hello";
+// for (const char of str){
+//     console.log(char);
+// }
+
+// const m = new Map([
+//     ["name", "Akash"],
+//     ["age", 25],
+//     ["city", "Hyderabad"]
+// ]);
+
+// for (let [key, value] of m){
+//     console.log(`${key}: ${value}`);
+// }
+
+// const name = "Uday";
+
+// for (const char of name){
+//     console.log(char);
+// }
+
+// const fruits = ['apple','banana','mango'];
+// for (const index in fruits){
+//     console.log(index + ':' + fruits[index]);
+// }
+
+//  const colors = ["red", "green", "blue", "yellow"];
+//  for (let result of colors){
+//     console.log(result);
+//  }
+
+// const car = { brand: "Toyota", model: "Camry", year: 2022 };
+
+// for (const key in car){
+//     console.log(key + ':' + car[key]);
+// }
+
+// const word = "Hyderabad";
+// count = 0
+// for (const char of word){
+//     count++;
+// }
+
+// const nums = [10, 20, 30, 40, 50];
+// let res=0;
+// for (const num of nums){
+//       res+=num;
+// }
+// console.log(res);
+
+// const profile = { name: "Arjun", age: 25, city: "Hyderabad", score: 99 };
+// for (let key in profile){
+//     if (typeof(profile[key]) === "number"){
+//          console.log(key);
+//     }
+// }
+
+// const sentence = "Hello World";
+// for (let vowels of sentence){
+//     if(["a", "e", "i", "o", "u"].includes(vowels)){
+//         console.log(vowels);
+//     }
+// }
+
+// let firstName = null;
+// let lastName = null;
+// let nickName = "Supercoder";
+
+//  shows the first truthy value:
+// console.log(firstName || lastName || nickName || "Anonymous"); // Supercoder
+
+// let height = 0;
+// console.log(height || 100);
+// console.log(height ?? 100);
+
+// function count (){
+//     console.log(this.length);
+// }
+
+// let a = [];
+// console.log(a);
+
+// let b = [10, 20, 40];
+// console.log(b);
+
+let c = [];
+const { stdin } = require("process");
+// c.push("Nodejs");
+// c.unshift("React");
+
+// console.log(c);
+
+// console.log(typeof(c.pop()));
+
+// console.log(c)
+
+// let a = [1, 2, 3, 4, 5];
+
+// let res = a.forEach(item => {
+//     console.log(item);
+// });
+
+// for (let i=0; i<a.length; i++){
+//     let res=a[i];
+//     console.log(res);
+// }
+
+// for (let res of a){
+//     console.log(res);
+// }
+
+// let res = a.shift();
+// console.log(a);
+
+// let reversed = [];
+
+// for (let item of a){
+//     reversed.unshift(item)
+// }
+// console.log(reversed);
+
+//
+
+// let a = [1, 2, 2, 3, 4, 4, 5];
+// // expected output: [1, 2, 3, 4, 5]
+
+// let result=[];
+
+// for (let item of a ){
+//     if(!result.includes(item)){
+//         result.push(item)
+//     }
+// }
+
+// console.log(result)
+
+// let a = [3, 1, 5];
+// let b = [8, 2, 4];
+
+// // expected output: [1, 2, 3, 4, 5, 8]
+
+// let merged = [...a, ...b];
+
+// console.log(merged.sort((a,b) => (a - b)));
+
+// let a = 2+2;
+
+// switch(a){
+//     case 3:
+//         console.log('Too small');
+//         break;
+//     case 4:
+//         console.log('Exactly');
+//         break;
+//     case 5:
+//         console.log('too big');
+//         break;
+//     default:
+//         console.log("i don't know such values");
+// }
+
+// let a = "1";
+// let b = 0;
+
+// switch (+a) {
+//   case b + 1:
+//     console.log("this runs, because +a is 1, exactly equals b+1");
+//     break;
+
+//   default:
+//     console.log("this doesn't run");
+// }
+
+// const readline = require("readline");
+
+// const r1 = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
+
+// r1.question("Enter a Month:", (answer) => {
+//   let month = Number(answer);
+
+//   switch(str){
+//       case "summer":
+//           console.log("Wear cotton clothes");
+//           break;
+//       case "winter":
+//           console.log("Wear woolen clothes");
+//           break;
+//       case "rainy":
+//           console.log("Wear water proof clothes");
+//           break;
+//       default:
+//           console.log("Enter a valid season");
+//   }
+
+//   switch (month) {
+//     case 1:
+//     case 3:
+//     case 5:
+//       console.log("31 days");
+//       break;
+//     case 2:
+//       console.log("28 days");
+//       break;
+//     case 4:
+//     case 6:
+//       console.log("30 days");
+//       break;
+//     default:
+//       console.log("Invalid month");
+//   }
+//   r1.close();
+// });
+
+// const readline = require("readline");
+
+// const r1 = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout,
+// });
+
+
+// function showMessage(name) {
+//     return `Hello ${name}`;
+// }
+
+// r1.question("Enter Your name: ", (answer) => {
+//     console.log(showMessage(answer)); // just pass answer directly
+//     r1.close();
+// });
+
+// let name = "Uday";
+
+// function showName(){
+//     let message = `Welcome ${name}`;
+//     return message;
+// }
+
+// console.log(showName());
+
+
+// let userName = "John";
+
+// function showMessage(){
+//     let userName="Bob";
+
+//     let message = `You are ${userName}`
+//     return message;
+// }
+
+// console.log(userName);
+
+// showMessage();
+
+// console.log(showMessage());
+
+
+// let userName = 'John';
+
+// function showMessage() {
+//   let userName = "Bob"; // declare a local variable
+
+//   let message = 'Hello, ' + userName; // Bob
+//   console.log(message);
+// }
+
+// // the function will create and use its own userName
+// showMessage();
+
+// console.log(userName);
+
+// let a = "global";
+
+// function scopes() {
+//     let a = "local";
+//     console.log(a);
+//     if(true){
+//         let a = "block";
+//         console.log(a);
+//     }
+// }
+// scopes()
+
+
+// function greet() {
+//     return "Hello";
+//     console.log("World"); // what happens here?
+// }
+// console.log(greet());
+
+// function greet(name) {
+//     return `Hello ${name}`;
+// }
+
+// console.log(greet("Uday")); // Hello Uday
+// console.log(greet());       // Hello undefined 
+
+// function greet(name = "stranger"){
+//     return `Hello ${name}`;
+// }
+
+// console.log(greet("Pavan"));
+// console.log(greet());
+
+// function createUser(name="Guest", age=20, city="Hyd"){
+//     return `${name} is ${age} years old lives in ${city}`;
+// }
+
+// console.log(createUser());
+// console.log(createUser(undefined, 23, "Chennai"));
+
+// function showMessage(from, text) { // parameters: from, text
+//   console.log(from + ': ' + text);
+// }
+
+// showMessage('Ann', 'Hello!'); // Ann: Hello! (*)
+// showMessage('Ann', "What's up?"); // Ann: What's up? (**)
+
+// function add(...numbers){
+//   return numbers.reduce((sum,num) => sum + num, 0);
+// }
+
+// console.log(add(2,3));
+// console.log(add(23,35,78));
+
+// function greet(greeting, ...names){
+//   return names.map(name => `${greeting} ${name}`);
+// }
+
+// console.log(greet("Hello", "Uday", "John", "Bob"));
+
+
+const readlineSync = require('readline-sync');
+const birthYear = parseInt(readlineSync.question("Enter birth year: "));
+const age = new Date().getFullYear() - birthYear;
+console.log("Age:", age);
