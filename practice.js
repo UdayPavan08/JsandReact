@@ -457,7 +457,60 @@ const { stdin } = require("process");
 // console.log(greet("Hello", "Uday", "John", "Bob"));
 
 
+
+//calculating age based on birth year
+// const readlineSync = require('readline-sync');
+// const birthYear = parseInt(readlineSync.question("Enter birth year: "));
+// const age = new Date().getFullYear() - birthYear;
+// console.log("Age:", age);
+
+
+// create a simple calculator that can perform addition, subtraction, multiplication, and division based on user input. Can you help me with that?
+
+
 const readlineSync = require('readline-sync');
-const birthYear = parseInt(readlineSync.question("Enter birth year: "));
-const age = new Date().getFullYear() - birthYear;
-console.log("Age:", age);
+
+function calculator() {
+    const num1 = parseFloat(readlineSync.question("Enter the first number: "));
+    const num2 = parseFloat(readlineSync.question("Enter the second number: "));
+    const operator = readlineSync.question("Enter an operator (+, -, *, /): ");  
+
+    // Validate input
+    if (isNaN(num1) || isNaN(num2)) {
+        console.log("Invalid input. Please enter valid numbers.");
+        return;
+    }
+    // Perform calculation based on operator
+    else {
+        let result;
+        
+        // Use a switch statement to handle different operators
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                if (num2 === 0) {
+                    console.log("Error: Division by zero is not allowed.");
+                    return;
+                }
+                result = num1 / num2;
+                break;
+
+                // Handle invalid operator input
+            default:
+                console.log("Invalid operator. Please enter +, -, *, or /.");
+                return;
+        }
+        console.log("Result:", result);
+    }
+}
+
+// Call the calculator function to run the program
+calculator(); 
