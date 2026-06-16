@@ -574,8 +574,6 @@ const readlineSync = require("readline-sync");
 // }
 // printNumbers();
 
-
-
 //print even numbers from 1-100
 // function evenNumbers(num) {
 //   for (let i = 1; i <= num; i++) {
@@ -596,23 +594,60 @@ const readlineSync = require("readline-sync");
 // evenNumbers(num);
 
 //Multiplication Table Generator
+// function multiplicationTable(num) {
+//   for (let i=1; i<= 10; i++){
+//     if(isNaN(num) || num <= 0){
+//       console.log("Enter a valid number");
+//       return;
+//     }
+//     else{
+//       console.log(`${num} x ${i} = ${num * i}`);
+//     }
+//   }
+// }
+// let num1;
+// do {
+//   num1 = parseInt(readlineSync.question("Enter a number: "));
+//   if (isNaN(num1) || num1 <= 0) {
+//     console.log("Enter a valid number");
+//   }
+// } while (isNaN(num1) || num1 <= 0);
+// multiplicationTable(num1);
 
-function multiplicationTable(num) {
-  for (let i=1; i<= 10; i++){
-    if(isNaN(num) || num <= 0){
-      console.log("Enter a valid number");
-      return;
-    }
-    else{
-      console.log(`${num} x ${i} = ${num * i}`);
-    }
+//grade calculator using switch statement
+function gradeChecker(score) {
+  if (isNaN(score) || score < 0 || score > 100) {
+    console.log("Enter a valid score between 0 and 100");
+    return;
+  }
+
+  switch (true) {
+    case score >= 90:
+      console.log("Grade: A");
+      break;
+
+    case score >= 80:
+      console.log("Grade: B");
+      break;
+
+    case score >= 70:
+      console.log("Grade: C");
+      break;
+
+    case score >= 60:
+      console.log("Grade: D");
+      break;
+
+    case score >= 50:
+      console.log("Grade: E");
+      break;
+
+    default:
+      console.log("Grade: F");
   }
 }
-let num1;
-do {
-  num1 = parseInt(readlineSync.question("Enter a number: "));
-  if (isNaN(num1) || num1 <= 0) {
-    console.log("Enter a valid number");
-  }
-} while (isNaN(num1) || num1 <= 0);
-multiplicationTable(num1);
+
+const score = parseInt(readlineSync.question("Enter Your Score: "));
+gradeChecker(score);
+
+
