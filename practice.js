@@ -113,6 +113,7 @@
 //     console.log(res);
 // }
 
+//find the largest number in an array
 // let numArr=[1,4,7,34,8];
 // let largest=numArr[0];
 // for(let i=0; i<numArr.length; i++){
@@ -120,7 +121,6 @@
 //         largest=numArr[i];
 //     }
 // }
-
 // console.log("Largest number is: " + largest);
 
 // const str = "Hello";
@@ -208,8 +208,8 @@
 // let b = [10, 20, 40];
 // console.log(b);
 
-let c = [];
-const { stdin } = require("process");
+// let c = [];
+// const { stdin } = require("process");
 // c.push("Nodejs");
 // c.unshift("React");
 
@@ -346,7 +346,6 @@ const { stdin } = require("process");
 //     output: process.stdout,
 // });
 
-
 // function showMessage(name) {
 //     return `Hello ${name}`;
 // }
@@ -365,7 +364,6 @@ const { stdin } = require("process");
 
 // console.log(showName());
 
-
 // let userName = "John";
 
 // function showMessage(){
@@ -380,7 +378,6 @@ const { stdin } = require("process");
 // showMessage();
 
 // console.log(showMessage());
-
 
 // let userName = 'John';
 
@@ -408,7 +405,6 @@ const { stdin } = require("process");
 // }
 // scopes()
 
-
 // function greet() {
 //     return "Hello";
 //     console.log("World"); // what happens here?
@@ -420,7 +416,7 @@ const { stdin } = require("process");
 // }
 
 // console.log(greet("Uday")); // Hello Uday
-// console.log(greet());       // Hello undefined 
+// console.log(greet());       // Hello undefined
 
 // function greet(name = "stranger"){
 //     return `Hello ${name}`;
@@ -456,24 +452,20 @@ const { stdin } = require("process");
 
 // console.log(greet("Hello", "Uday", "John", "Bob"));
 
-
-
 //calculating age based on birth year
 // const readlineSync = require('readline-sync');
 // const birthYear = parseInt(readlineSync.question("Enter birth year: "));
 // const age = new Date().getFullYear() - birthYear;
 // console.log("Age:", age);
 
-
 //  create a simple calculator that can perform addition, subtraction, multiplication, and division based on user input. Can you help me with that?
 
-
-const readlineSync = require('readline-sync');
+const readlineSync = require("readline-sync");
 
 // function calculator() {
 //     const num1 = parseFloat(readlineSync.question("Enter the first number: "));
 //     const num2 = parseFloat(readlineSync.question("Enter the second number: "));
-//     const operator = readlineSync.question("Enter an operator (+, -, *, /): ");  
+//     const operator = readlineSync.question("Enter an operator (+, -, *, /): ");
 
 //     // Validate input
 //     if (isNaN(num1) || isNaN(num2)) {
@@ -483,7 +475,7 @@ const readlineSync = require('readline-sync');
 //     // Perform calculation based on operator
 //     else {
 //         let result;
-        
+
 //         // Use a switch statement to handle different operators
 //         switch (operator) {
 //             case '+':
@@ -513,9 +505,7 @@ const readlineSync = require('readline-sync');
 // }
 
 // // Call the calculator function to run the program
-// calculator(); 
-
-
+// calculator();
 
 //reverse a string using built-in methods
 // function reverseString(str) {
@@ -525,20 +515,104 @@ const readlineSync = require('readline-sync');
 // console.log(reverseString("Hello World")); // Output: "dlroW olleH"
 
 //reverse a string using a loop
-function reverseStringloop(str) {
-    let reversed = '';
-    for (let i=str.length - 1; i>=0; i--){
-      reversed = reversed + str[i];
+// function reverseStringloop(str) {
+//     let reversed = '';
+//     for (let i=str.length - 1; i>=0; i--){
+//       reversed = reversed + str[i];
+//     }
+//     return reversed;
+// }
+
+// //take input from user and reverse the string
+// let input = readlineSync.question("Enter a string: ");
+// console.log(reverseStringloop(input));
+
+// //test the function with a sample string
+// console.log(reverseStringloop("Hello World"));
+
+//Voting Eligibility Checker
+
+// function checkVotingEligibility(age) {
+//   if(age <= 0){
+//     console.log("Please enter a which is greater than zero")
+//   }
+//    else if (age >= 18){
+//       console.log("You are Eligible for vote ");
+//     }
+//     else{
+//       console.log("You are not eligible for vote");
+//     }
+//   }
+
+// const age = parseInt(readlineSync.question("Enter Your Age: "));
+//   checkVotingEligibility(age);
+
+//same program using ternary operator
+//   function checkVotingEligibility(age) {
+//     const message = age >= 18 ? "You are Eligible for vote" : "You are not eligible for vote";
+//     console.log(message);
+//   }
+
+//   let age;
+
+// do {
+//   age = parseInt(readlineSync.question("Enter Your Age: "));
+
+//   if (age <= 0) {
+//     console.log("Please enter an age which is greater than zero");
+//   }
+// } while (age <= 0); //  keeps looping until a valid age is entered
+
+// checkVotingEligibility(age)
+
+//print 1-100 using loops
+
+// function printNumbers() {
+//   for (let i=1; i<=100; i++){
+//     console.log(i);
+//   }
+// }
+// printNumbers();
+
+
+
+//print even numbers from 1-100
+// function evenNumbers(num) {
+//   for (let i = 1; i <= num; i++) {
+//     if (i % 2 === 0) {
+//       console.log(i);
+//     }
+//   }
+// }
+
+// let num;
+// do {
+//   num = parseInt(readlineSync.question("Enter a number: "));
+//   if (isNaN(num) || num <= 0) {
+//     console.log("Enter a valid number");
+//   }
+// } while (isNaN(num) || num <= 0);
+
+// evenNumbers(num);
+
+//Multiplication Table Generator
+
+function multiplicationTable(num) {
+  for (let i=1; i<= 10; i++){
+    if(isNaN(num) || num <= 0){
+      console.log("Enter a valid number");
+      return;
     }
-    return reversed;
+    else{
+      console.log(`${num} x ${i} = ${num * i}`);
+    }
+  }
 }
-
-//take input from user and reverse the string
-let input = readlineSync.question("Enter a string: ");
-console.log(reverseStringloop(input));
-
-//test the function with a sample string
-console.log(reverseStringloop("Hello World")); 
-
-
-//reverse a string using recursion
+let num1;
+do {
+  num1 = parseInt(readlineSync.question("Enter a number: "));
+  if (isNaN(num1) || num1 <= 0) {
+    console.log("Enter a valid number");
+  }
+} while (isNaN(num1) || num1 <= 0);
+multiplicationTable(num1);
