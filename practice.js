@@ -681,14 +681,54 @@ const readlineSync = require("readline-sync");
 // let greeting = sayHello();
 // console.log(greeting);
 
-function myFunction() {
-  var carName = "Volvo";
-   let veh = carName;
-   var carName = "BMW";
-  console.log(veh);
-  return carName;
+// function myFunction() {
+//   var carName = "Volvo";
+//    let veh = carName;
+//    var carName = "BMW";
+//   console.log(veh);
+//   return carName;
  
-}
+// }
 
-let vehicle = myFunction();
-console.log(vehicle);
+// let vehicle = myFunction();
+// console.log(vehicle);
+
+
+//Functions used as Variables
+
+// let temp = "The temperature is " + toCelsius(77) + " degrees Celsius.";
+// console.log(temp);
+
+// function toCelsius(fahrenheit) {
+//   return (5 / 9) * (fahrenheit - 32);
+// }
+
+//Area calculator using function
+
+// function calculateArea(length, width) {
+//   return length * width;
+// }
+
+// let length = parseFloat(readlineSync.question("Enter the length: "));
+// let width = parseFloat(readlineSync.question("Enter the width: "));
+
+// let area = calculateArea(length, width);
+// console.log(`The area of the rectangle is: ${area}`);
+
+
+//function to know number is even or not
+
+const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+readline.question("Enter a number: ", (input) => {
+  let num = Number(input);
+  console.log(isEven(num) ? "true" : "false");
+  readline.close();
+});
+
+function isEven(num) {
+  return num % 2 === 0;
+}
