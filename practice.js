@@ -615,39 +615,80 @@ const readlineSync = require("readline-sync");
 // multiplicationTable(num1);
 
 //grade calculator using switch statement
-function gradeChecker(score) {
-  if (isNaN(score) || score < 0 || score > 100) {
-    console.log("Enter a valid score between 0 and 100");
-    return;
-  }
+// function gradeChecker(score) {
+//   if (isNaN(score) || score < 0 || score > 100) {
+//     console.log("Enter a valid score between 0 and 100");
+//     return;
+//   }
 
-  switch (true) {
-    case score >= 90:
-      console.log("Grade: A");
-      break;
+//   switch (true) {
+//     case score >= 90:
+//       console.log("Grade: A");
+//       break;
 
-    case score >= 80:
-      console.log("Grade: B");
-      break;
+//     case score >= 80:
+//       console.log("Grade: B");
+//       break;
 
-    case score >= 70:
-      console.log("Grade: C");
-      break;
+//     case score >= 70:
+//       console.log("Grade: C");
+//       break;
 
-    case score >= 60:
-      console.log("Grade: D");
-      break;
+//     case score >= 60:
+//       console.log("Grade: D");
+//       break;
 
-    case score >= 50:
-      console.log("Grade: E");
-      break;
+//     case score >= 30:
+//       console.log("Grade: E");
+//       break;
 
-    default:
-      console.log("Grade: F");
-  }
+//     default:
+//       console.log("Grade: F");
+//   }
+// }
+
+// const score = parseInt(readlineSync.question("Enter Your Score: "));
+// gradeChecker(score);
+
+
+// remove duplicates from a string
+
+// function removeDuplicates(str) {
+//   let result = "";
+//   for (let i of str) {
+//     if (!result.includes(i)) {
+//       result += i;
+//     }
+//   }
+//   console.log(result);
+// }
+
+// const str = readlineSync.question("Enter a string: ");
+// removeDuplicates(str);
+
+
+// function testing(a,b,c){
+//   return a+b+c;
+// }
+
+// let result = testing(1,2);
+// let res = testing(1,2,4);
+// console.log(result);
+// console.log(res);
+
+// function sayHello(){return "Hello"};
+
+// let greeting = sayHello();
+// console.log(greeting);
+
+function myFunction() {
+  var carName = "Volvo";
+   let veh = carName;
+   var carName = "BMW";
+  console.log(veh);
+  return carName;
+ 
 }
 
-const score = parseInt(readlineSync.question("Enter Your Score: "));
-gradeChecker(score);
-
-
+let vehicle = myFunction();
+console.log(vehicle);
