@@ -859,7 +859,111 @@ const readlineSync = require("readline-sync");
 // }, 1000);
 
 
+ 
+// (function () {
+//   let message = "Hello";
+//   console.log("This runs immediately!");
+// });
 
-(function () {
-  console.log("This runs immediately!");
-})();
+// console.log(message);
+
+// function counter() {
+//     let count = 0;
+
+//     return function () {
+//         count++;
+//         return count;
+//     };
+// }
+
+// const increment = counter();
+
+// console.log(increment()); // 1
+// console.log(increment()); // 2
+// console.log(increment()); // 3
+
+
+
+// function outer() {
+//     let count = 0;
+
+//     return function () {
+//         count++;
+//         console.log(count);
+//     };
+// }
+
+// const c1 = outer();
+
+// c1();
+// c1();
+// c1();
+
+// const arr1=[1,2,3]
+
+// console.log(arr1.map());
+
+
+// const user ={
+//   name:"Uday",
+//   age : 20,
+//   "most liked movie": "mcu"
+// }
+
+// let res= user.most liked movie;
+// console.log(res);
+
+
+// const property = "Firstname";
+// const name = "uday";
+
+// const user = `First name, $[name]`;
+
+// const obj1 = {
+//   property:
+// }
+
+const property = "Name"
+const name = "uday"
+
+const user = {
+  [property] : name
+};
+
+// let key = "Firstname";
+
+// user[key] = ;
+
+// console.log(user);
+
+// const user1 = {};
+
+// let key = "Name";
+// user1[key] = "uday";
+
+// console.log(user1);
+
+// function user1 (){
+//   return function user2 (){
+//     console.log("Uday");
+//   }
+// }
+
+// user1.map(user1);
+
+// console.log(user1);
+
+
+function add (a,b,c){
+  console.log("a=", a);
+  console.log("b=", b);
+  console.log("c=", c);
+  return a+b+c;
+}
+
+  
+  const arr = [1,2,3];
+  // const res2 = add(2,4);
+  const res= arr.map(add);
+
+  console.log(res);
