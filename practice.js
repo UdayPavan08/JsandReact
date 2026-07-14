@@ -718,17 +718,148 @@ const readlineSync = require("readline-sync");
 
 //function to know number is even or not
 
-const readline = require('readline').createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+// const readline = require('readline').createInterface({
+//   input: process.stdin,
+//   output: process.stdout
+// });
 
-readline.question("Enter a number: ", (input) => {
-  let num = Number(input);
-  console.log(isEven(num) ? "true" : "false");
-  readline.close();
-});
+// readline.question("Enter a number: ", (input) => {
+//   let num = Number(input);
+//   console.log(isEven(num) ? "true" : "false");
+//   readline.close();
+// });
 
-function isEven(num) {
-  return num % 2 === 0;
-}
+// function isEven(num) {
+//   return num % 2 === 0;
+// }
+
+
+// function debounce(func, delay) {
+//   let timerId;
+//   return function (...args) {
+//     clearTimeout(timerId);
+//     timerId = setTimeout(() => func(...args), delay);
+//   };
+// }
+
+// const search = debounce((query) => console.log("Searching for:", query), 5000);
+
+// search("c");
+// search("ca");
+// search("cat");
+
+// function debounce1(func, delay){
+//   let timeouts;
+
+//   return function (...args){
+//     clearTimeout(timeouts);
+//     timeouts = setTimeout (() => func(...args), delay);
+//   };
+// }
+
+// const show = debounce1((query) => console.log("search for:", query), 900);
+// show("ca");
+// show("bat");
+// show("Apple");
+
+
+// the wrong way
+// function debounce(func, wait) {
+//   let timeout
+//   return (...args) => {
+//     clearTimeout(timeout)
+//     timeout = setTimeout(() => func(...args), wait)
+//   }
+// }
+
+
+// function sayHello(x) {
+//   console.log(x)
+// }
+
+// const debounce2 = debounce(sayHello, 100)
+// debounce2(1)
+// debounce2(2)
+// debounce2(3)
+// setTimeout(() => debounce2(4), 200)
+
+
+//Throttling
+
+// function throttle(func, limit) {
+//   let inThrottle = false;
+
+//   return (...args) => {
+//     if(!inThrottle){
+//       func(...args);
+//       inThrottle=true;
+
+//       setTimeout(() => {
+//         inThrottle = false;
+//       }, limit)
+//     }
+//   };
+// }
+
+
+// function throttle(func, limit) {
+//   let inThrottle = false;
+//   return (...args) => {
+//     if (!inThrottle) {
+//       func(...args);
+//       inThrottle = true;
+//       setTimeout(() => (inThrottle = false), limit);
+//     }
+//   };
+// }
+
+// const log = throttle((msg) => console.log(msg, Date.now()), 1300);
+
+
+// setTimeout(() => log("call 1"), 0);
+// setTimeout(() => log("call 2"), 200);
+// setTimeout(() => log("call 3"), 500);
+// setTimeout(() => log("call 4"), 2200);
+
+// function lateExecute(func, delay) {
+//   let timerFlag = null;
+
+//   return (...args) => {
+//     if (timerFlag === null) {
+//       func(...args);
+//       timerFlag = setTimeout(() => {
+//         timerFlag = null;
+//       },delay);
+//     }
+//   };
+// }
+
+// const executed = lateExecute((query) => console.log(query), 900);
+
+// executed("Hel");
+// executed("Hello");
+
+
+// function greet(name) {
+//   return `Hello ${name}`;
+
+// }
+// console.log(greet("Uday"));
+// const greet = (name) => `Hello,${name}`;
+
+
+// let arr = [1,2,3,4];
+
+// let res = arr.map(item => item*2);
+
+// console.log(res)
+
+// setTimeout(() => {
+//     console.log("Function executed");
+// }, 1000);
+
+
+
+(function () {
+  console.log("This runs immediately!");
+})();

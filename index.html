@@ -1,0 +1,49 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Debounce Live Search</title>
+  </head>
+  <body>
+    <h2>Type to search:</h2>
+    <input type="text" id="searchBox" placeholder="Start typing..." style="padding: 8px; font-size: 16px;">
+    <p id="status" style="color: gray;"></p>
+    <ul id="results"></ul>
+
+    <script>
+      function debounce(func, delay) {
+        let timerId;
+        return function (...args) {
+          clearTimeout(timerId);
+          timerId = setTimeout(() => func(...args), delay);
+        };
+      }
+
+      const allFruits = ["Apple", "Banana", "Cherry", "Cranberry", "Date", "Grape", "Kiwi", "Mango"];
+
+      const status = document.getElementById("status");
+      const resultsList = document.getElementById("results");
+
+      function performSearch(query) {
+        status.textContent = `Searched for: "${query}"`;
+        resultsList.innerHTML = "";
+
+        const matches = allFruits.filter(fruit =>
+          fruit.toLowerCase().includes(query.toLowerCase())
+        );
+
+        matches.forEach(fruit => {
+          const li = document.createElement("li");
+          li.textContent = fruit;
+          resultsList.appendChild(li);
+        });
+      }
+
+      const debouncedSearch = debounce(performSearch, 900);
+
+      document.getElementById("searchBox").addEventListener("input", (e) => {
+        status.textContent = "Typing..."; // updates instantly, no debounce
+        debouncedSearch(e.target.value);   // waits 400ms after you stop typing
+      });
+    </script>
+  </body>
+  </html>
