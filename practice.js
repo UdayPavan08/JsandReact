@@ -954,16 +954,57 @@ const user = {
 // console.log(user1);
 
 
-function add (a,b,c){
-  console.log("a=", a);
-  console.log("b=", b);
-  console.log("c=", c);
-  return a+b+c;
-}
+// function add (a,b,c){
+//   console.log("a=", a);
+//   console.log("b=", b);
+//   console.log("c=", c);
+//   return a+b+c;
+// }
 
-  
-  const arr = [1,2,3];
-  // const res2 = add(2,4);
-  const res= arr.map(add);
+//   const arras = (1,2,3);
+//   const res2 = add(2,4);
+//   const res= arras.map(add);
 
-  console.log(res);
+//   console.log(res);
+
+
+  // const arr = [1,2,3];
+  // const str = "1,2,3";
+  // console.log(str == arr);
+  // console.log(typeof arr);
+  // console.log(typeof str);
+
+  // function add2 (a,b){
+  //   return a+b;
+  // }
+  // const arr = ["uday", "frontend"]
+  // console.log(arr.map(add2));
+
+  const arr = [1,2,3,4];
+
+  // const arr1 = arr.reverse();
+
+  // console.log(arr1)
+
+  // arr[arr.length] = "Welcome"
+
+  //   arr.push("Nextjs");
+
+  //   // console.log(arr);
+
+  //   let a = arr.toString();
+  //   console.log(a);
+  //   console.log(arr.join('|'))
+
+  // console.log(Object.keys(arr));
+  // console.log(Object.values(arr));
+
+  // console.log(typeof []);
+
+  const ar = [5, 6, 7, 8];
+
+ console.log(typeof [...arr, ...ar]);
+
+  // console.log(typeof res)
+
+  // console.log(res)
