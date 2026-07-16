@@ -980,7 +980,7 @@ const user = {
   // const arr = ["uday", "frontend"]
   // console.log(arr.map(add2));
 
-  const arr = [1,2,3,4];
+  // const arr = [1,2,3,4];
 
   // const arr1 = arr.reverse();
 
@@ -1001,10 +1001,48 @@ const user = {
 
   // console.log(typeof []);
 
-  const ar = [5, 6, 7, 8];
+//   const ar = [5, 6, 7, 8];
 
- console.log(typeof [...arr, ...ar]);
+//  console.log(typeof [...arr, ...ar]);
 
   // console.log(typeof res)
 
   // console.log(res)
+
+
+  const arr = ['oihkbk', 'iobishdoi', 133];
+  console.log( arr.join(":").toString());
+
+  console.log(arr.at(2));
+
+  console.log(arr.push(567));
+
+  console.log(arr.pop(2));
+
+  console.log(arr.unshift(10));
+
+  console.log(arr);
+
+  console.log(arr.shift());
+
+const sorting = (a,b) => a-b;
+
+const sortArr= [7,9,2,5,1,80];
+console.log(sortArr.sort(sorting));
+
+console.log(['Banana', 'apple'].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase())));
+
+
+const people = [
+  { name: 'Bob', age: 25 },
+  { name: 'Alice', age: 30 },
+  { name: 'Eve', age: 20 }
+];
+
+console.log(people.sort((a,b) => a.name.localeCompare(b.name)));
+
+const originalArr = [3, 5, 2];
+// const sortedArr = [...originalArr].sort((a,b) => a-b);
+// console.log(sortedArr.join("|").toString());
+const originalArr2 = [4, 6, 8];
+console.log([...originalArr, ...originalArr2].sort((a,b) => a-b));
