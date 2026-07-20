@@ -1066,36 +1066,97 @@ const readlineSync = require("readline-sync");
 
 // find duplicate elements in an array
 
-function findDuplicates(arr) {
-  if (arr.length === 0) {
-    return undefined;
-  }
+// function findDuplicates(arr) {
+//   if (arr.length === 0) {
+//     return undefined;
+//   }
 
-  arr.sort((a,b) => a-b);
-  let duplicates = [];
-  for(let i=0; i<arr.length; i++){
-    if(arr[i] === arr[i+1] && !duplicates.includes(arr[i])){
-      duplicates.push(arr[i]);
-    }
-  }
-  return duplicates;
-}
+//   arr.sort((a,b) => a-b);
+//   let duplicates = [];
+//   for(let i=0; i<arr.length; i++){
+//     if(arr[i] === arr[i+1] && !duplicates.includes(arr[i])){
+//       duplicates.push(arr[i]);
+//     }
+//   }
+//   return duplicates;
+// }
 
-const arr = [1,2,5,1,6,2,7,9,5];
-console.log(findDuplicates(arr));
+// const arr = [1,2,5,1,6,2,7,9,5];
+// console.log(findDuplicates(arr));
 
-//move all zeros to end of array
+// //move all zeros to end of array
 
-function moveZeros(arr) {
-  let lastNonZero = 0; // position where next non-zero should go
+// function moveZeros(arr) {
+//   let lastNonZero = 0; // position where next non-zero should go
   
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] !== 0) {
-      [arr[lastNonZero], arr[i]] = [arr[i], arr[lastNonZero]]; // swap
-      lastNonZero++;
-    }
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] !== 0) {
+//       [arr[lastNonZero], arr[i]] = [arr[i], arr[lastNonZero]]; // swap
+//       lastNonZero++;
+//     }
+//   }
+//   return arr;
+// }
+
+//   console.log(moveZeros([0, 1, 0, 3, 12]));
+
+
+// console.log(typeof []);
+// console.log(typeof object);
+// console.log(typeof Object)
+
+// console.log([] === []);
+
+// console.log(typeof (object));
+
+// console.log(typeof ([] + []));
+
+// console.log(typeof {});
+
+
+// console.log(Array.isArray([])); 
+
+// function processData(data) {
+//   if (Array.isArray(data)) {
+//     data.forEach(item => console.log(item));
+//   } else {
+//     console.log("Expected an array, got:",typeof data);
+//   }
+// }
+
+// const data = processData(90);
+
+
+// function displayData(data) {
+//   if(Array.isArray(data)){
+//     data.forEach(item => console.log(item))
+//   }else{
+//     console.log("Expected an array but got:", typeof data);
+//   }
+// }
+
+// displayData([1,6,6]);
+
+async function fetchUsers() {
+  const res = await fetch("/api/users");
+  const data = await res.json();
+
+  if(Array.isArray(data)){
+    data.forEach(user => renderUserCard(user))
+  }else {
+    console.error("Expected an array but got:", typeof data);
+    showErrorMessage("Something went wrong of loading users data");
   }
-  return arr;
 }
 
-console.log(moveZeros([0, 1, 0, 3, 12]));
+
+
+function delay(message, ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(message);
+    }, ms);
+  });
+}
+
+delay("Done!", 2000).then((msg) => console.log(msg));
