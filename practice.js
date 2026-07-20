@@ -923,12 +923,12 @@ const readlineSync = require("readline-sync");
 //   property:
 // }
 
-const property = "Name"
-const name = "uday"
+// const property = "Name"
+// const name = "uday"
 
-const user = {
-  [property] : name
-};
+// const user = {
+//   [property] : name
+// };
 
 // let key = "Firstname";
 
@@ -1010,39 +1010,92 @@ const user = {
   // console.log(res)
 
 
-  const arr = ['oihkbk', 'iobishdoi', 133];
-  console.log( arr.join(":").toString());
+//   const arr = ['oihkbk', 'iobishdoi', 133];
+//   console.log( arr.join(":").toString());
 
-  console.log(arr.at(2));
+//   console.log(arr.at(2));
 
-  console.log(arr.push(567));
+//   console.log(arr.push(567));
 
-  console.log(arr.pop(2));
+//   console.log(arr.pop(2));
 
-  console.log(arr.unshift(10));
+//   console.log(arr.unshift(10));
 
-  console.log(arr);
+//   console.log(arr);
 
-  console.log(arr.shift());
+//   console.log(arr.shift());
 
-const sorting = (a,b) => a-b;
+// const sorting = (a,b) => a-b;
 
-const sortArr= [7,9,2,5,1,80];
-console.log(sortArr.sort(sorting));
+// const sortArr= [7,9,2,5,1,80];
+// console.log(sortArr.sort(sorting));
 
-console.log(['Banana', 'apple'].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase())));
+// console.log(['Banana', 'apple'].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase())));
 
 
-const people = [
-  { name: 'Bob', age: 25 },
-  { name: 'Alice', age: 30 },
-  { name: 'Eve', age: 20 }
-];
+// const people = [
+//   { name: 'Bob', age: 25 },
+//   { name: 'Alice', age: 30 },
+//   { name: 'Eve', age: 20 }
+// ];
 
-console.log(people.sort((a,b) => a.name.localeCompare(b.name)));
+// console.log(people.sort((a,b) => a.name.localeCompare(b.name)));
 
-const originalArr = [3, 5, 2];
-// const sortedArr = [...originalArr].sort((a,b) => a-b);
-// console.log(sortedArr.join("|").toString());
-const originalArr2 = [4, 6, 8];
-console.log([...originalArr, ...originalArr2].sort((a,b) => a-b));
+// const originalArr = [3, 5, 2];
+// // const sortedArr = [...originalArr].sort((a,b) => a-b);
+// // console.log(sortedArr.join("|").toString());
+// const originalArr2 = [4, 6, 8];
+// console.log([...originalArr, ...originalArr2].sort((a,b) => a-b));
+
+//find largest element in array
+// function maxArr(arr) {
+//   if (arr.length === 0){
+//     return undefined;
+//   }
+//   let ele = arr[0];
+//   for(let i=1; i<arr.length; i++) {
+//     if(arr[i] > ele) {
+//       ele = arr[i];
+//     }
+//   }
+//   return ele;
+// }
+
+// const arr = [1,4,9,5,7];
+// console.log(maxArr(arr));
+
+// find duplicate elements in an array
+
+function findDuplicates(arr) {
+  if (arr.length === 0) {
+    return undefined;
+  }
+
+  arr.sort((a,b) => a-b);
+  let duplicates = [];
+  for(let i=0; i<arr.length; i++){
+    if(arr[i] === arr[i+1] && !duplicates.includes(arr[i])){
+      duplicates.push(arr[i]);
+    }
+  }
+  return duplicates;
+}
+
+const arr = [1,2,5,1,6,2,7,9,5];
+console.log(findDuplicates(arr));
+
+//move all zeros to end of array
+
+function moveZeros(arr) {
+  let lastNonZero = 0; // position where next non-zero should go
+  
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== 0) {
+      [arr[lastNonZero], arr[i]] = [arr[i], arr[lastNonZero]]; // swap
+      lastNonZero++;
+    }
+  }
+  return arr;
+}
+
+console.log(moveZeros([0, 1, 0, 3, 12]));
