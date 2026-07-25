@@ -1137,27 +1137,50 @@ const readlineSync = require("readline-sync");
 
 // displayData([1,6,6]);
 
-async function fetchUsers() {
-  const res = await fetch("/api/users");
-  const data = await res.json();
+// async function fetchUsers() {
+//   const res = await fetch("/api/users");
+//   const data = await res.json();
 
-  if(Array.isArray(data)){
-    data.forEach(user => renderUserCard(user))
-  }else {
-    console.error("Expected an array but got:", typeof data);
-    showErrorMessage("Something went wrong of loading users data");
-  }
+//   if(Array.isArray(data)){
+//     data.forEach(user => renderUserCard(user))
+//   }else {
+//     console.error("Expected an array but got:", typeof data);
+//     showErrorMessage("Something went wrong of loading users data");
+//   }
+// }
+
+
+
+// function delay(message, ms) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(message);
+//     }, ms);
+//   });
+// }
+
+// delay("Done!", 2000).then((msg) => console.log(msg));
+
+// function greet(message,wishes){
+//     this.message = message;
+//     this.wishes = wishes;
+
+//     this.getDetails = function () {
+//       return `${this.message} ${this.wishes}`;
+//     }
+// }
+// const person = new greet("Unable to come","Happy Birthday");
+// console.log(person.getDetails());
+
+
+function Timer() {
+  this.seconds = 0;
+
+  setInterval(function () {
+    //  console.log("this is:", this); 
+    this.seconds++;
+    console.log(typeof this.seconds);
+  }, 1000);
 }
 
-
-
-function delay(message, ms) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(message);
-    }, ms);
-  });
-}
-
-delay("Done!", 2000).then((msg) => console.log(msg));
-
+new Timer();
