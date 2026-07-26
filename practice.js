@@ -650,7 +650,6 @@ const readlineSync = require("readline-sync");
 // const score = parseInt(readlineSync.question("Enter Your Score: "));
 // gradeChecker(score);
 
-
 // remove duplicates from a string
 
 // function removeDuplicates(str) {
@@ -665,7 +664,6 @@ const readlineSync = require("readline-sync");
 
 // const str = readlineSync.question("Enter a string: ");
 // removeDuplicates(str);
-
 
 // function testing(a,b,c){
 //   return a+b+c;
@@ -687,12 +685,11 @@ const readlineSync = require("readline-sync");
 //    var carName = "BMW";
 //   console.log(veh);
 //   return carName;
- 
+
 // }
 
 // let vehicle = myFunction();
 // console.log(vehicle);
-
 
 //Functions used as Variables
 
@@ -715,7 +712,6 @@ const readlineSync = require("readline-sync");
 // let area = calculateArea(length, width);
 // console.log(`The area of the rectangle is: ${area}`);
 
-
 //function to know number is even or not
 
 // const readline = require('readline').createInterface({
@@ -732,7 +728,6 @@ const readlineSync = require("readline-sync");
 // function isEven(num) {
 //   return num % 2 === 0;
 // }
-
 
 // function debounce(func, delay) {
 //   let timerId;
@@ -762,7 +757,6 @@ const readlineSync = require("readline-sync");
 // show("bat");
 // show("Apple");
 
-
 // the wrong way
 // function debounce(func, wait) {
 //   let timeout
@@ -771,7 +765,6 @@ const readlineSync = require("readline-sync");
 //     timeout = setTimeout(() => func(...args), wait)
 //   }
 // }
-
 
 // function sayHello(x) {
 //   console.log(x)
@@ -782,7 +775,6 @@ const readlineSync = require("readline-sync");
 // debounce2(2)
 // debounce2(3)
 // setTimeout(() => debounce2(4), 200)
-
 
 //Throttling
 
@@ -801,7 +793,6 @@ const readlineSync = require("readline-sync");
 //   };
 // }
 
-
 // function throttle(func, limit) {
 //   let inThrottle = false;
 //   return (...args) => {
@@ -814,7 +805,6 @@ const readlineSync = require("readline-sync");
 // }
 
 // const log = throttle((msg) => console.log(msg, Date.now()), 1300);
-
 
 // setTimeout(() => log("call 1"), 0);
 // setTimeout(() => log("call 2"), 200);
@@ -839,14 +829,12 @@ const readlineSync = require("readline-sync");
 // executed("Hel");
 // executed("Hello");
 
-
 // function greet(name) {
 //   return `Hello ${name}`;
 
 // }
 // console.log(greet("Uday"));
 // const greet = (name) => `Hello,${name}`;
-
 
 // let arr = [1,2,3,4];
 
@@ -858,8 +846,6 @@ const readlineSync = require("readline-sync");
 //     console.log("Function executed");
 // }, 1000);
 
-
- 
 // (function () {
 //   let message = "Hello";
 //   console.log("This runs immediately!");
@@ -882,8 +868,6 @@ const readlineSync = require("readline-sync");
 // console.log(increment()); // 2
 // console.log(increment()); // 3
 
-
-
 // function outer() {
 //     let count = 0;
 
@@ -903,7 +887,6 @@ const readlineSync = require("readline-sync");
 
 // console.log(arr1.map());
 
-
 // const user ={
 //   name:"Uday",
 //   age : 20,
@@ -912,7 +895,6 @@ const readlineSync = require("readline-sync");
 
 // let res= user.most liked movie;
 // console.log(res);
-
 
 // const property = "Firstname";
 // const name = "uday";
@@ -953,7 +935,6 @@ const readlineSync = require("readline-sync");
 
 // console.log(user1);
 
-
 // function add (a,b,c){
 //   console.log("a=", a);
 //   console.log("b=", b);
@@ -967,48 +948,46 @@ const readlineSync = require("readline-sync");
 
 //   console.log(res);
 
+// const arr = [1,2,3];
+// const str = "1,2,3";
+// console.log(str == arr);
+// console.log(typeof arr);
+// console.log(typeof str);
 
-  // const arr = [1,2,3];
-  // const str = "1,2,3";
-  // console.log(str == arr);
-  // console.log(typeof arr);
-  // console.log(typeof str);
+// function add2 (a,b){
+//   return a+b;
+// }
+// const arr = ["uday", "frontend"]
+// console.log(arr.map(add2));
 
-  // function add2 (a,b){
-  //   return a+b;
-  // }
-  // const arr = ["uday", "frontend"]
-  // console.log(arr.map(add2));
+// const arr = [1,2,3,4];
 
-  // const arr = [1,2,3,4];
+// const arr1 = arr.reverse();
 
-  // const arr1 = arr.reverse();
+// console.log(arr1)
 
-  // console.log(arr1)
+// arr[arr.length] = "Welcome"
 
-  // arr[arr.length] = "Welcome"
+//   arr.push("Nextjs");
 
-  //   arr.push("Nextjs");
+//   // console.log(arr);
 
-  //   // console.log(arr);
+//   let a = arr.toString();
+//   console.log(a);
+//   console.log(arr.join('|'))
 
-  //   let a = arr.toString();
-  //   console.log(a);
-  //   console.log(arr.join('|'))
+// console.log(Object.keys(arr));
+// console.log(Object.values(arr));
 
-  // console.log(Object.keys(arr));
-  // console.log(Object.values(arr));
-
-  // console.log(typeof []);
+// console.log(typeof []);
 
 //   const ar = [5, 6, 7, 8];
 
 //  console.log(typeof [...arr, ...ar]);
 
-  // console.log(typeof res)
+// console.log(typeof res)
 
-  // console.log(res)
-
+// console.log(res)
 
 //   const arr = ['oihkbk', 'iobishdoi', 133];
 //   console.log( arr.join(":").toString());
@@ -1031,7 +1010,6 @@ const readlineSync = require("readline-sync");
 // console.log(sortArr.sort(sorting));
 
 // console.log(['Banana', 'apple'].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase())));
-
 
 // const people = [
 //   { name: 'Bob', age: 25 },
@@ -1088,7 +1066,7 @@ const readlineSync = require("readline-sync");
 
 // function moveZeros(arr) {
 //   let lastNonZero = 0; // position where next non-zero should go
-  
+
 //   for (let i = 0; i < arr.length; i++) {
 //     if (arr[i] !== 0) {
 //       [arr[lastNonZero], arr[i]] = [arr[i], arr[lastNonZero]]; // swap
@@ -1099,7 +1077,6 @@ const readlineSync = require("readline-sync");
 // }
 
 //   console.log(moveZeros([0, 1, 0, 3, 12]));
-
 
 // console.log(typeof []);
 // console.log(typeof object);
@@ -1113,8 +1090,7 @@ const readlineSync = require("readline-sync");
 
 // console.log(typeof {});
 
-
-// console.log(Array.isArray([])); 
+// console.log(Array.isArray([]));
 
 // function processData(data) {
 //   if (Array.isArray(data)) {
@@ -1125,7 +1101,6 @@ const readlineSync = require("readline-sync");
 // }
 
 // const data = processData(90);
-
 
 // function displayData(data) {
 //   if(Array.isArray(data)){
@@ -1149,8 +1124,6 @@ const readlineSync = require("readline-sync");
 //   }
 // }
 
-
-
 // function delay(message, ms) {
 //   return new Promise((resolve, reject) => {
 //     setTimeout(() => {
@@ -1172,15 +1145,106 @@ const readlineSync = require("readline-sync");
 // const person = new greet("Unable to come","Happy Birthday");
 // console.log(person.getDetails());
 
+// function Timer() {
+//   this.seconds = 0;
 
-function Timer() {
-  this.seconds = 0;
+//   setInterval(function () {
+//     //  console.log("this is:", this);
+//     this.seconds++;
+//     console.log(typeof this.seconds);
+//   }, 1000);
+// }
 
-  setInterval(function () {
-    //  console.log("this is:", this); 
-    this.seconds++;
-    console.log(typeof this.seconds);
-  }, 1000);
-}
+// new Timer();
 
-new Timer();
+// const x = 4;
+
+// console.log(+x)
+
+// const obj = {
+//   name: "Uday",
+//   address : {city: "Delhi"}
+// };
+
+// console.log(obj.address.city)
+// console.log(obj.contact?.phone)
+
+// for (let i = 0; i <= 10; i++) {
+//   if (i % 2 === 0) {         //infinite loop
+//     console.log(i);
+//   }
+// };
+
+// let i = 1;
+
+// while (i<= 5) {
+//   console.log(i);
+//   ++i;
+// }
+
+// let arr = ["a", "b", "c", "e", "d", "f"];
+
+// // console.log("Original Array: " + arr);
+// // arr.splice(1,2);
+// // console.log(typeof "After splice: " + arr);
+
+//   let ele = arr.find(item => item === "e");
+//   if(!ele){
+//     console.log("Element was not found");
+//   }else {
+//     let index = arr.indexOf(ele);
+//     arr[index]="E";
+//     console.log(arr);
+//   }
+
+//find and replace element in array
+// let arr = ["a", "b", "c", "e", "d", "f"];
+
+// let index = arr.findIndex((item) => item === "y");
+
+// if (index === -1) {
+//   console.log("Element was not found");
+// } else {
+//   arr[index] = "E";
+//   console.log(arr); // ["a", "b", "c", "E", "d", "f"]
+// }
+
+let arr = ["a", "b", "c", "e", "d", "f"];
+// let index = arr.findIndex((item) => item === "h");
+
+// if (index === -1) {
+//   console.log("Element was not found");
+// }else{
+//   arr.splice(index, 1, "E");
+//   console.log(arr);
+// }
+
+// const arr1 = [0,1,2,3];
+// const arr2 = [-1,-2,-3];
+
+// console.log(...arr1 ,...arr2)
+
+// let arr = ["a", "b", "c", "e", "d", "f"];
+
+// console.log(arr.splice(-1,1,"8"));
+// console.log(arr)
+
+
+// const users = {name : "Uday", role: "developer"};
+// for(const keys in users){
+//   console.log(keys)
+//   console.log(users[keys])
+// }
+
+// const arr = ['a','d'];
+// for(const ele in arr){
+//   console.log(typeof ele)
+// }
+
+//slice
+
+// console.log(arr.slice(1,4));
+// console.log(arr)
+
+console.log(arr.fill("G",1,3))
+
