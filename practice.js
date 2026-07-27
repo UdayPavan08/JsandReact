@@ -1209,7 +1209,7 @@ const readlineSync = require("readline-sync");
 //   console.log(arr); // ["a", "b", "c", "E", "d", "f"]
 // }
 
-let arr = ["a", "b", "c", "e", "d", "f"];
+// let arr = ["a", "b", "c", "e", "d", "f"];
 // let index = arr.findIndex((item) => item === "h");
 
 // if (index === -1) {
@@ -1246,5 +1246,43 @@ let arr = ["a", "b", "c", "e", "d", "f"];
 // console.log(arr.slice(1,4));
 // console.log(arr)
 
-console.log(arr.fill("G",1,3))
+// console.log(arr.fill("G",1,3))
 
+// const fruits = ["banana", "orange", "apple", "mango"]
+
+// const result = fruits.copyWithin(2,0);
+// console.log(result)
+// let arr = ["a", "b", "c", "e", "d", "f"];
+// const res = arr.copyWithin(1,0,3)
+// console.log(res)
+
+// console.log(arr.copyWithin(1,0,5));
+
+
+// let arr = ["a", "b", "c", "e", "d", "f", "g", "h", "i"];
+// //const res = arr.copyWithin(2,0,3)
+// //const res = arr.copyWithin(1,0,4)
+// const res = arr.copyWithin(-3,1,2)
+// //0,1,0,1,4,a,b,c,e
+// //a,a,b,c,e,f//abceab
+// console.log(res)
+
+//-------Flat() Method--------//
+
+// const arr = [1,2,[3,[4,[5,6]],7],8];
+
+// const newArr = arr.flat();
+
+// let text = JSON.stringify(newArr);
+// console.log(text)
+
+// console.log(arr)
+
+// const months = ["Jan", "Mar", "Apr", "May", "dec" , "sept"];
+
+// // Inserting an element at index 1
+// const months2 = months.toSpliced(-1, 0, "july");
+// console.log(months2);
+
+const space = [1,,  3, 4,5 ,, 6];
+console.log(space.toSpliced(1,2));
