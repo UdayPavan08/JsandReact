@@ -1576,64 +1576,211 @@ const readlineSync = require("readline-sync");
 // const itemSell = orders
 // .flatMap(orders => orders.products)
 
-
 // console.log(itemSell);
 
+// const orders = [
+//   {
+//     orderId: 101,
+//     customer: "Rahul",
+//     products: [
+//       {
+//         id: 1,
+//         name: "Mouse",
+//         price: 25
+//       },
+//       {
+//         id: 2,
+//         name: "Keyboard",
+//         price: 80
+//       }
+//     ]
+//   },
+//   {
+//     orderId: 102,
+//     customer: "Priya",
+//     products: [
+//       {
+//         id: 3,
+//         name: "Monitor",
+//         price: 250
+//       },
+//       {
+//         id: 4,
+//         name: "USB Cable",
+//         price: 15
+//       }
+//     ]
+//   }
+// ];
 
-const orders = [
-  {
-    orderId: 101,
-    customer: "Rahul",
-    products: [
-      {
-        id: 1,
-        name: "Mouse",
-        price: 25
-      },
-      {
-        id: 2,
-        name: "Keyboard",
-        price: 80
-      }
-    ]
-  },
-  {
-    orderId: 102,
-    customer: "Priya",
-    products: [
-      {
-        id: 3,
-        name: "Monitor",
-        price: 250
-      },
-      {
-        id: 4,
-        name: "USB Cable",
-        price: 15
-      }
-    ]
-  }
-];
-
-const productNames = orders.flatMap(
-    order => order.products.map(product => product.name)
-);
-console.log(productNames);
-
-
+// const productNames = orders.flatMap(
+//     order => order.products.map(product => product.name)
+// );
+// console.log(productNames);
 
 //---------- reduce()-------//
 
-reduce(callbackFn)
-reduce(callbackFn, initialValue)
+// reduce(callbackFn)
+// reduce(callbackFn, initialValue)
 
-const array = [1, 2, 3, 4];
+// const array = [1, 2, 3, 4];
 
-// 0 + 1 + 2 + 3 + 4
-const initialValue = 0;
-const sumWithInitial = array.reduce(
-  (accumulator, currentValue) => accumulator + currentValue,
-  initialValue,
-);
+// // 0 + 1 + 2 + 3 + 4
+// const initialValue = 0;
+// const sumWithInitial = array.reduce(
+//   (accumulator, currentValue) => accumulator + currentValue,
+//   initialValue,
+// );
+//console.log(sumWithInitial);
 
-console.log(sumWithInitial);
+// const cart = [
+//   {
+//     id: 1,
+//     name: "Mouse",
+//     price: 25,
+//     quantity: 2
+//   },
+//   {
+//     id: 2,
+//     name: "Keyboard",
+//     price: 80,
+//     quantity: 1
+//   },
+//   {
+//     id: 3,
+//     name: "Cable",
+//     price: 15,
+//     quantity: 3
+//   }
+// ];
+
+// const total = cart.reduce(
+//     (sum, product) => sum + product.price * product.quantity,
+//     0
+// );
+
+// console.log("Total Bill:", total);
+
+//----OBJECTS-------//
+
+//Object creation
+// Object Literal Syntax (Preferred)
+// const user = {
+//   name: "Alice",
+//   age: 25,
+//   isPremium: true
+// };
+
+// Object Constructor Syntax
+// const admin = new Object();
+// admin.name = "Bob";
+
+// const user = {
+//   id: 1,
+//   name: "khrndknrkdn",
+//   age: 23,
+//   address : [
+//     "city", "state", 67
+//   ],
+//   department : {
+//     dep_name : "Computer Science",
+//     dep_id : "cs101101"
+//   }
+// };
+
+// console.log(user);
+
+// const employee = new Object();
+// employee.name = "Uday";
+// console.log(employee)
+
+// console.log(Object.values(user));
+// console.log(Object.keys(user));
+// console.log(user.address[1]);
+// console.log(user.department.dep_name);
+
+// console.log(user)
+
+// async function getUser() {
+//   const response = await fetch("https://jsonplaceholder.typicode.com/users");
+//   const users = await response.json();
+//   const firstUser = users[0];
+
+//   console.log(firstUser.name);           // dot notation
+//   console.log(firstUser.email);
+//   console.log(firstUser.address.city);
+//   console.log(firstUser.company.name);
+// for (const [key,value] of Object.entries(firstUser)){
+//   console.log(`${key}`, value);
+// }
+// }
+// getUser();
+
+// async function getUsers() {
+//   console.time("fetch"); // start a stopwatch
+
+//   const response = await fetch("https://jsonplaceholder.typicode.com/users");
+//   const users = await response.json();
+
+//   console.timeEnd("fetch"); // stop the stopwatch, prints elapsed time
+//   console.log(users[0].name);
+// }
+
+// getUsers();
+
+
+// async function getNameAndEmail() {
+//   const response = await fetch("https://jsonplaceholder.typicode.com/users");
+//   const userData = await response.json();
+//   const firstUser = userData[0];
+
+//   // console.log(Object.keys(firstUser));
+//   const data = userData.map((userData) => ({
+//     name : userData.name,
+//     email : userData.email
+//   }));
+//   console.log(data)
+// }
+
+// getNameAndEmail();
+
+
+//---------findUserByUsername------//
+// async function findUserByUsername() {
+//   const response = await fetch("https://jsonplaceholder.typicode.com/users");
+//   const userData = await response.json();
+
+//   const userName = userData.find(userData => (  
+//     userData.username === "Bret"
+//   ));
+//   console.log(userName)
+// }
+
+// findUserByUsername();
+
+
+
+// async function findCityNames () {
+//   const response = await fetch("https://jsonplaceholder.typicode.com/users");
+//   const cityData = await response.json();
+
+//   const allCityNames = cityData.map(cityData => cityData.address.city);
+//   const cityNames = [...new Set(allCityNames)];
+//   console.log(cityNames);
+// }
+
+// findCityNames();
+
+
+async function findCompanyByBs() {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const companyData = await response.json();
+
+    const count = companyData.filter(user =>
+        user.company.bs.includes("e-enable")
+    ).length;
+
+    console.log("Count is:", count);
+}
+
+findCompanyByBs();
