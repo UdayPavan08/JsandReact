@@ -1356,13 +1356,11 @@ const readlineSync = require("readline-sync");
 // });
 // console.log(sum); // 18
 
-
 // const months = ["Jan", "Mar", "Apr", "May", "Dec" , "Sept"];
 
 // const sortedMonths = months.sort((a,b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
 // console.log(sortedMonths);
-
 
 // // 1. Define the "correct" order as a reference array.
 // //    Its index in this array becomes each value's rank.
@@ -1396,7 +1394,6 @@ const readlineSync = require("readline-sync");
 // console.log("\nVersion B (lookup object):");
 // console.log(sortedB.map(t => `${t.priority}: ${t.name}`).join("\n"));
 
-
 // const priorityOrder = ["low", "medium", "high"];
 
 // const tasks = [
@@ -1415,66 +1412,228 @@ const readlineSync = require("readline-sync");
 
 // console.log(sortedTasks.map(t => `${t.priority}: ${t.name}`).join("\n"));
 
+//--------Custom Sorting -------//
+// const employees = [
+//   {
+//     id: 101,
+//     name: "Rahul",
+//     department: "Frontend",
+//     experience: 3,
+//     salary: 65000,
+//     status: "Active"
+//   },
+//   {
+//     id: 102,
+//     name: "Priya",
+//     department: "Backend",
+//     experience: 5,
+//     salary: 90000,
+//     status: "Inactive"
+//   },
+//   {
+//     id: 103,
+//     name: "Amit",
+//     department: "Frontend",
+//     experience: 2,
+//     salary: 55000,
+//     status: "Active"
+//   },
+//   {
+//     id: 104,
+//     name: "Sneha",
+//     department: "QA",
+//     experience: 4,
+//     salary: 70000,
+//     status: "Active"
+//   }
+// ];
 
-const employees = [
+// // employees.forEach(employees => {
+// //     console.log(employees.name);
+// // })
+
+// // now i need to create a card where i have employee id name experience and status
+
+// const employeeCards = employees.map(employees => ({
+//     id:employees.id,
+//     name: employees.name,
+//     department: employees.department,
+//     status : employees.status
+// }));
+
+// console.log(employeeCards);
+
+// const frontendEmployees = employees.filter(employees =>
+//     employees.salary <= 50000
+// );
+// if (frontendEmployees.length === 0) {
+//     console.log("Not found");
+// }else {
+//     const frontendEmployeeNames = frontendEmployees.map(employees => (
+//          employees.name
+//     ));
+//     console.log(frontendEmployeeNames)
+// }
+
+//-----Shopping Cart Example------//
+
+// const cart = [
+//   {
+//     id: 1,
+//     name: "Wireless Mouse",
+//     price: 25,
+//     quantity: 2
+//   },
+//   {
+//     id: 2,
+//     name: "Mechanical Keyboard",
+//     price: 80,
+//     quantity: 1
+//   },
+//   {
+//     id: 3,
+//     name: "USB-C Cable",
+//     price: 15,
+//     quantity: 3
+//   }
+// ];
+
+// const cartProducts = cart.forEach(product => {
+//   console.log(product.name)
+// });
+
+// const productOnly = cart.map(product => product.name);
+// console.log(productOnly);
+
+// const productId = cart.find(product => product.id === 2);
+// console.log(productId)
+
+// const productExists = cart.some(product => product.id === 3)
+// if(!productExists){
+//   console.log("Product is not there in cart");
+// }else {
+//   const proName = productExists.map(productExists => );
+//   console.log(proName)
+// }
+
+//-------- includes()-------//
+
+// includes(searchElement)
+// includes(searchElement, fromIndex)
+
+// const array = [1, 2, 3];
+
+// console.log(array.includes(2));
+// // Expected output: true
+
+// const pets = ["cat", "dog", "bat"];
+
+// console.log(pets.includes("cat"));
+// // Expected output: true
+
+// console.log(pets.includes("at"));
+// // Expected output: false
+
+// const arr = [1, "2", "4", 9];
+
+// console.log(arr.includes(4));
+
+// const arr = ["a", "b", "c"];
+
+// console.log(arr.includes("c", 3)); // false
+// console.log(arr.includes("c", 100)); // false
+
+// const arr = [1, 2, 3, 4];
+// console.log(arr.flatMap((x) => [x, x * 2]));
+// is equivalent to
+// const n = arr.length;
+// const acc = new Array(n * 2);
+// for (let i = 0; i < n; i++) {
+//   const x = arr[i];
+//   acc[i * 2] = x;
+//   acc[i * 2 + 1] = x * 2;
+// }
+// [1, 2, 2, 4, 3, 6, 4, 8]
+
+// const orders = [
+//   {
+//     orderId: 101,
+//     customer: "Rahul",
+//     products: ["Mouse", "Keyboard"],
+//   },
+//   {
+//     orderId: 102,
+//     customer: "Priya",
+//     products: ["Monitor", "Cable"],
+//   },
+//   {
+//     orderId: 103,
+//     customer: "Amit",
+//     products: ["Laptop"],
+//   },
+// ];
+
+// const itemSell = orders
+// .flatMap(orders => orders.products)
+
+
+// console.log(itemSell);
+
+
+const orders = [
   {
-    id: 101,
-    name: "Rahul",
-    department: "Frontend",
-    experience: 3,
-    salary: 65000,
-    status: "Active"
+    orderId: 101,
+    customer: "Rahul",
+    products: [
+      {
+        id: 1,
+        name: "Mouse",
+        price: 25
+      },
+      {
+        id: 2,
+        name: "Keyboard",
+        price: 80
+      }
+    ]
   },
   {
-    id: 102,
-    name: "Priya",
-    department: "Backend",
-    experience: 5,
-    salary: 90000,
-    status: "Inactive"
-  },
-  {
-    id: 103,
-    name: "Amit",
-    department: "Frontend",
-    experience: 2,
-    salary: 55000,
-    status: "Active"
-  },
-  {
-    id: 104,
-    name: "Sneha",
-    department: "QA",
-    experience: 4,
-    salary: 70000,
-    status: "Active"
+    orderId: 102,
+    customer: "Priya",
+    products: [
+      {
+        id: 3,
+        name: "Monitor",
+        price: 250
+      },
+      {
+        id: 4,
+        name: "USB Cable",
+        price: 15
+      }
+    ]
   }
 ];
 
-
-// employees.forEach(employees => {
-//     console.log(employees.name);
-// })
-
-// now i need to create a card where i have employee id name experience and status
-
-const employeeCards = employees.map(employees => ({
-    id:employees.id,
-    name: employees.name,
-    department: employees.department,
-    status : employees.status
-}));
-
-console.log(employeeCards);
-
-const frontendEmployees = employees.filter(employees => 
-    employees.salary <= 50000
+const productNames = orders.flatMap(
+    order => order.products.map(product => product.name)
 );
-if (frontendEmployees.length === 0) {
-    console.log("Not found");
-}else {
-    const frontendEmployeeNames = frontendEmployees.map(employees => (
-         employees.name
-    ));
-    console.log(frontendEmployeeNames)
-}
+console.log(productNames);
+
+
+
+//---------- reduce()-------//
+
+reduce(callbackFn)
+reduce(callbackFn, initialValue)
+
+const array = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue,
+);
+
+console.log(sumWithInitial);
