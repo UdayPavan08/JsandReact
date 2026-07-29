@@ -1008,7 +1008,6 @@ const readlineSync = require("readline-sync");
 
 // const sortArr= [7,9,2,5,1,80];
 // console.log(sortArr.sort(sorting));
-
 // console.log(['Banana', 'apple'].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase())));
 
 // const people = [
@@ -1229,7 +1228,6 @@ const readlineSync = require("readline-sync");
 // console.log(arr.splice(-1,1,"8"));
 // console.log(arr)
 
-
 // const users = {name : "Uday", role: "developer"};
 // for(const keys in users){
 //   console.log(keys)
@@ -1258,7 +1256,6 @@ const readlineSync = require("readline-sync");
 
 // console.log(arr.copyWithin(1,0,5));
 
-
 // let arr = ["a", "b", "c", "e", "d", "f", "g", "h", "i"];
 // //const res = arr.copyWithin(2,0,3)
 // //const res = arr.copyWithin(1,0,4)
@@ -1284,5 +1281,359 @@ const readlineSync = require("readline-sync");
 // const months2 = months.toSpliced(-1, 0, "july");
 // console.log(months2);
 
-const space = [1,,  3, 4,5 ,, 6];
-console.log(space.toSpliced(1,2));
+// const space = [1,,  3, 4,5 ,, 6];
+// console.log(space.toSpliced(1,2));
+
+//-----toSorted()-------//
+
+// const months = ["Jan", "Mar", "Apr", "May", "dec" , "sept"];
+
+// console.log(months.sort());
+
+// const months = ["Mar", "Jan", "Feb", "Dec"];
+// const sortedMonths = months.toSorted();
+// console.log(sortedMonths); // ['Dec', 'Feb', 'Jan', 'Mar']
+// console.log(months); // ['Mar', 'Jan', 'Feb', 'Dec']
+
+// const values = [1, 10, 21, 2];
+// const sortedValues = values.toSorted((a, b) => a - b);
+// console.log(sortedValues); // [1, 2, 10, 21]
+// console.log(values); // [1, 10, 21, 2]
+
+//----toReversed()-----//
+// const items = [1, 400, 2000, 30, 5];
+// console.log(items); // [1, 2, 3]
+
+// const reversedItems = items.toReversed();
+// console.log(reversedItems); // [3, 2, 1]
+// console.log(items); // [1, 2, 3]
+
+//with()
+// const items = [1,2,3,4,5];
+// console.log(items.with(3,756));
+
+//at()
+// const array = [5, 12, 8, 130, 44];
+
+// let index = 2;
+
+// console.log(`An index of ${index} returns ${array.at(index)}`);
+// // Expected output: "An index of 2 returns 8"
+
+// index = -2;
+
+// console.log(`An index of ${index} returns ${array.at(index)}`);
+
+//-----includes()---//
+// const array = [5, 12, 8, 130, 44];
+
+// console.log(array.includes(-8));
+
+// let arr = [1, 2];
+
+// let arrayLike = {
+//   0: "something",
+//   length: 1
+// };
+// console.log( arr.concat(arrayLike) ); // 1,2,[object Object]
+
+//-------forEach()-----
+// array.forEach(function(element, index, array) {
+//   // code
+// });
+// returns new array
+
+// const fruits = ["Apple", "mango", "watermelon"];
+// fruits.forEach((fruits, index) => {
+//     console.log(`${index}: ${fruits}`);
+// });
+
+// const arr = [5, 6, 7];
+// let sum = 0;
+
+// arr.forEach((n) => {
+//   sum += n;
+// });
+// console.log(sum); // 18
+
+// const months = ["Jan", "Mar", "Apr", "May", "Dec" , "Sept"];
+
+// const sortedMonths = months.sort((a,b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+
+// console.log(sortedMonths);
+
+// // 1. Define the "correct" order as a reference array.
+// //    Its index in this array becomes each value's rank.
+// const priorityOrder = ["Low", "Medium", "High"];
+
+// // 2. Some data to sort — priority as a string, so default sort would be alphabetical (High, Low, Medium)
+// const tasks = [
+//   { name: "Fix login bug",     priority: "High" },
+//   { name: "Update README",     priority: "Low" },
+//   { name: "Refactor API",      priority: "Medium" },
+//   { name: "Patch security hole", priority: "High" },
+//   { name: "Clean up CSS",      priority: "Low" },
+// ];
+
+// // --- Version A: using indexOf() directly in the comparator ---
+// const sortedA = [...tasks].sort(
+//   (a, b) => priorityOrder.indexOf(a.priority) - priorityOrder.indexOf(b.priority)
+// );
+
+// console.log("Version A (indexOf):");
+// console.log(sortedA.map(t => `${t.priority}: ${t.name}`).join("\n"));
+
+// // --- Version B: using a lookup object (faster, no re-scanning the array) ---
+// const priorityRank = Object.fromEntries(priorityOrder.map((p, i) => [p, i]));
+// // priorityRank => { Low: 0, Medium: 1, High: 2 }
+
+// const sortedB = [...tasks].sort(
+//   (a, b) => priorityRank[a.priority] - priorityRank[b.priority]
+// );
+
+// console.log("\nVersion B (lookup object):");
+// console.log(sortedB.map(t => `${t.priority}: ${t.name}`).join("\n"));
+
+// const priorityOrder = ["low", "medium", "high"];
+
+// const tasks = [
+//   { name: "Fix login bug",     priority: "High" },
+//   { name: "Update README",     priority: "Low" },
+//   { name: "Refactor API",      priority: "Medium" },
+//   { name: "Patch security hole", priority: "High" },
+//   { name: "Clean up CSS",      priority: "Low" },
+// ];
+
+// const priorityRank = Object.fromEntries(priorityOrder.map((p, i) => [p, i]));
+
+// const sortedTasks = [...tasks].sort(
+//    (a,b)=> priorityRank[a.priority] - priorityRank[b.priority]
+// )
+
+// console.log(sortedTasks.map(t => `${t.priority}: ${t.name}`).join("\n"));
+
+//--------Custom Sorting -------//
+// const employees = [
+//   {
+//     id: 101,
+//     name: "Rahul",
+//     department: "Frontend",
+//     experience: 3,
+//     salary: 65000,
+//     status: "Active"
+//   },
+//   {
+//     id: 102,
+//     name: "Priya",
+//     department: "Backend",
+//     experience: 5,
+//     salary: 90000,
+//     status: "Inactive"
+//   },
+//   {
+//     id: 103,
+//     name: "Amit",
+//     department: "Frontend",
+//     experience: 2,
+//     salary: 55000,
+//     status: "Active"
+//   },
+//   {
+//     id: 104,
+//     name: "Sneha",
+//     department: "QA",
+//     experience: 4,
+//     salary: 70000,
+//     status: "Active"
+//   }
+// ];
+
+// // employees.forEach(employees => {
+// //     console.log(employees.name);
+// // })
+
+// // now i need to create a card where i have employee id name experience and status
+
+// const employeeCards = employees.map(employees => ({
+//     id:employees.id,
+//     name: employees.name,
+//     department: employees.department,
+//     status : employees.status
+// }));
+
+// console.log(employeeCards);
+
+// const frontendEmployees = employees.filter(employees =>
+//     employees.salary <= 50000
+// );
+// if (frontendEmployees.length === 0) {
+//     console.log("Not found");
+// }else {
+//     const frontendEmployeeNames = frontendEmployees.map(employees => (
+//          employees.name
+//     ));
+//     console.log(frontendEmployeeNames)
+// }
+
+//-----Shopping Cart Example------//
+
+// const cart = [
+//   {
+//     id: 1,
+//     name: "Wireless Mouse",
+//     price: 25,
+//     quantity: 2
+//   },
+//   {
+//     id: 2,
+//     name: "Mechanical Keyboard",
+//     price: 80,
+//     quantity: 1
+//   },
+//   {
+//     id: 3,
+//     name: "USB-C Cable",
+//     price: 15,
+//     quantity: 3
+//   }
+// ];
+
+// const cartProducts = cart.forEach(product => {
+//   console.log(product.name)
+// });
+
+// const productOnly = cart.map(product => product.name);
+// console.log(productOnly);
+
+// const productId = cart.find(product => product.id === 2);
+// console.log(productId)
+
+// const productExists = cart.some(product => product.id === 3)
+// if(!productExists){
+//   console.log("Product is not there in cart");
+// }else {
+//   const proName = productExists.map(productExists => );
+//   console.log(proName)
+// }
+
+//-------- includes()-------//
+
+// includes(searchElement)
+// includes(searchElement, fromIndex)
+
+// const array = [1, 2, 3];
+
+// console.log(array.includes(2));
+// // Expected output: true
+
+// const pets = ["cat", "dog", "bat"];
+
+// console.log(pets.includes("cat"));
+// // Expected output: true
+
+// console.log(pets.includes("at"));
+// // Expected output: false
+
+// const arr = [1, "2", "4", 9];
+
+// console.log(arr.includes(4));
+
+// const arr = ["a", "b", "c"];
+
+// console.log(arr.includes("c", 3)); // false
+// console.log(arr.includes("c", 100)); // false
+
+// const arr = [1, 2, 3, 4];
+// console.log(arr.flatMap((x) => [x, x * 2]));
+// is equivalent to
+// const n = arr.length;
+// const acc = new Array(n * 2);
+// for (let i = 0; i < n; i++) {
+//   const x = arr[i];
+//   acc[i * 2] = x;
+//   acc[i * 2 + 1] = x * 2;
+// }
+// [1, 2, 2, 4, 3, 6, 4, 8]
+
+// const orders = [
+//   {
+//     orderId: 101,
+//     customer: "Rahul",
+//     products: ["Mouse", "Keyboard"],
+//   },
+//   {
+//     orderId: 102,
+//     customer: "Priya",
+//     products: ["Monitor", "Cable"],
+//   },
+//   {
+//     orderId: 103,
+//     customer: "Amit",
+//     products: ["Laptop"],
+//   },
+// ];
+
+// const itemSell = orders
+// .flatMap(orders => orders.products)
+
+
+// console.log(itemSell);
+
+
+const orders = [
+  {
+    orderId: 101,
+    customer: "Rahul",
+    products: [
+      {
+        id: 1,
+        name: "Mouse",
+        price: 25
+      },
+      {
+        id: 2,
+        name: "Keyboard",
+        price: 80
+      }
+    ]
+  },
+  {
+    orderId: 102,
+    customer: "Priya",
+    products: [
+      {
+        id: 3,
+        name: "Monitor",
+        price: 250
+      },
+      {
+        id: 4,
+        name: "USB Cable",
+        price: 15
+      }
+    ]
+  }
+];
+
+const productNames = orders.flatMap(
+    order => order.products.map(product => product.name)
+);
+console.log(productNames);
+
+
+
+//---------- reduce()-------//
+
+reduce(callbackFn)
+reduce(callbackFn, initialValue)
+
+const array = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue,
+);
+
+console.log(sumWithInitial);
