@@ -1775,6 +1775,7 @@ async function findCityNames () {
   console.log(cityNames);
 }
 
+
 findCityNames();
 
 
@@ -1790,3 +1791,7 @@ async function findCompanyByBs() {
 }
 
 findCompanyByBs();
+
+
+const array = [1,24,45]
+console.log(array[3]);
