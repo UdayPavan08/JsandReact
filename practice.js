@@ -1290,486 +1290,493 @@ const readlineSync = require("readline-sync");
 
 // console.log(months.sort());
 
-// const months = ["Mar", "Jan", "Feb", "Dec"];
-// const sortedMonths = months.toSorted();
-// console.log(sortedMonths); // ['Dec', 'Feb', 'Jan', 'Mar']
-// console.log(months); // ['Mar', 'Jan', 'Feb', 'Dec']
+const months = ["Mar", "Jan", "Feb", "Dec"];
+const sortedMonths = months.toSorted();
+console.log(sortedMonths); // ['Dec', 'Feb', 'Jan', 'Mar']
+console.log(months); // ['Mar', 'Jan', 'Feb', 'Dec']
 
-// const values = [1, 10, 21, 2];
-// const sortedValues = values.toSorted((a, b) => a - b);
-// console.log(sortedValues); // [1, 2, 10, 21]
-// console.log(values); // [1, 10, 21, 2]
+const values = [1, 10, 21, 2];
+const sortedValues = values.toSorted((a, b) => a - b);
+console.log(sortedValues); // [1, 2, 10, 21]
+console.log(values); // [1, 10, 21, 2]
 
 //----toReversed()-----//
-// const items = [1, 400, 2000, 30, 5];
-// console.log(items); // [1, 2, 3]
+const items = [1, 400, 2000, 30, 5];
+console.log(items); // [1, 2, 3]
 
-// const reversedItems = items.toReversed();
-// console.log(reversedItems); // [3, 2, 1]
-// console.log(items); // [1, 2, 3]
+const reversedItems = items.toReversed();
+console.log(reversedItems); // [3, 2, 1]
+console.log(items); // [1, 2, 3]
 
-//with()
-// const items = [1,2,3,4,5];
-// console.log(items.with(3,756));
+// with()
+const items1 = [1,2,3,4,5];
+console.log(items1.with(3,756));
 
-//at()
-// const array = [5, 12, 8, 130, 44];
+// at()
+const array = [5, 12, 8, 130, 44];
 
-// let index = 2;
+let index = 2;
 
-// console.log(`An index of ${index} returns ${array.at(index)}`);
-// // Expected output: "An index of 2 returns 8"
+console.log(`An index of ${index} returns ${array.at(index)}`);
+// Expected output: "An index of 2 returns 8"
 
-// index = -2;
+index = -2;
 
-// console.log(`An index of ${index} returns ${array.at(index)}`);
+console.log(`An index of ${index} returns ${array.at(index)}`);
 
 //-----includes()---//
-// const array = [5, 12, 8, 130, 44];
+const array = [5, 12, 8, 130, 44];
 
-// console.log(array.includes(-8));
+console.log(array.includes(-8));
 
-// let arr = [1, 2];
+let arr = [1, 2];
 
-// let arrayLike = {
-//   0: "something",
-//   length: 1
-// };
-// console.log( arr.concat(arrayLike) ); // 1,2,[object Object]
+let arrayLike = {
+  0: "something",
+  length: 1
+};
+console.log( arr.concat(arrayLike) ); // 1,2,[object Object]
 
 //-------forEach()-----
-// array.forEach(function(element, index, array) {
-//   // code
-// });
-// returns new array
+array.forEach(function(element, index, array) {
+  // code
+});
+//returns new array
 
-// const fruits = ["Apple", "mango", "watermelon"];
-// fruits.forEach((fruits, index) => {
-//     console.log(`${index}: ${fruits}`);
-// });
+const fruits = ["Apple", "mango", "watermelon"];
+fruits.forEach((fruits, index) => {
+    console.log(`${index}: ${fruits}`);
+});
 
-// const arr = [5, 6, 7];
-// let sum = 0;
+const arr = [5, 6, 7];
+let sum = 0;
 
-// arr.forEach((n) => {
-//   sum += n;
-// });
-// console.log(sum); // 18
+arr.forEach((n) => {
+  sum += n;
+});
+console.log(sum); // 18
 
-// const months = ["Jan", "Mar", "Apr", "May", "Dec" , "Sept"];
+const months = ["Jan", "Mar", "Apr", "May", "Dec" , "Sept"];
 
-// const sortedMonths = months.sort((a,b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+const sortedMonths = months.sort((a,b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
-// console.log(sortedMonths);
+console.log(sortedMonths);
 
-// // 1. Define the "correct" order as a reference array.
-// //    Its index in this array becomes each value's rank.
-// const priorityOrder = ["Low", "Medium", "High"];
+// 1. Define the "correct" order as a reference array.
+//    Its index in this array becomes each value's rank.
+const priorityOrder = ["Low", "Medium", "High"];
 
-// // 2. Some data to sort — priority as a string, so default sort would be alphabetical (High, Low, Medium)
-// const tasks = [
-//   { name: "Fix login bug",     priority: "High" },
-//   { name: "Update README",     priority: "Low" },
-//   { name: "Refactor API",      priority: "Medium" },
-//   { name: "Patch security hole", priority: "High" },
-//   { name: "Clean up CSS",      priority: "Low" },
-// ];
+// 2. Some data to sort — priority as a string, so default sort would be alphabetical (High, Low, Medium)
+const tasks = [
+  { name: "Fix login bug",     priority: "High" },
+  { name: "Update README",     priority: "Low" },
+  { name: "Refactor API",      priority: "Medium" },
+  { name: "Patch security hole", priority: "High" },
+  { name: "Clean up CSS",      priority: "Low" },
+];
 
-// // --- Version A: using indexOf() directly in the comparator ---
-// const sortedA = [...tasks].sort(
-//   (a, b) => priorityOrder.indexOf(a.priority) - priorityOrder.indexOf(b.priority)
-// );
+// --- Version A: using indexOf() directly in the comparator ---
+const sortedA = [...tasks].sort(
+  (a, b) => priorityOrder.indexOf(a.priority) - priorityOrder.indexOf(b.priority)
+);
 
-// console.log("Version A (indexOf):");
-// console.log(sortedA.map(t => `${t.priority}: ${t.name}`).join("\n"));
+console.log("Version A (indexOf):");
+console.log(sortedA.map(t => `${t.priority}: ${t.name}`).join("\n"));
 
-// // --- Version B: using a lookup object (faster, no re-scanning the array) ---
-// const priorityRank = Object.fromEntries(priorityOrder.map((p, i) => [p, i]));
-// // priorityRank => { Low: 0, Medium: 1, High: 2 }
+// --- Version B: using a lookup object (faster, no re-scanning the array) ---
+const priorityRank = Object.fromEntries(priorityOrder.map((p, i) => [p, i]));
+// priorityRank => { Low: 0, Medium: 1, High: 2 }
 
-// const sortedB = [...tasks].sort(
-//   (a, b) => priorityRank[a.priority] - priorityRank[b.priority]
-// );
+const sortedB = [...tasks].sort(
+  (a, b) => priorityRank[a.priority] - priorityRank[b.priority]
+);
 
-// console.log("\nVersion B (lookup object):");
-// console.log(sortedB.map(t => `${t.priority}: ${t.name}`).join("\n"));
+console.log("\nVersion B (lookup object):");
+console.log(sortedB.map(t => `${t.priority}: ${t.name}`).join("\n"));
 
-// const priorityOrder = ["low", "medium", "high"];
+const priorityOrder = ["low", "medium", "high"];
 
-// const tasks = [
-//   { name: "Fix login bug",     priority: "High" },
-//   { name: "Update README",     priority: "Low" },
-//   { name: "Refactor API",      priority: "Medium" },
-//   { name: "Patch security hole", priority: "High" },
-//   { name: "Clean up CSS",      priority: "Low" },
-// ];
+const tasks = [
+  { name: "Fix login bug",     priority: "High" },
+  { name: "Update README",     priority: "Low" },
+  { name: "Refactor API",      priority: "Medium" },
+  { name: "Patch security hole", priority: "High" },
+  { name: "Clean up CSS",      priority: "Low" },
+];
 
-// const priorityRank = Object.fromEntries(priorityOrder.map((p, i) => [p, i]));
+const priorityRank = Object.fromEntries(priorityOrder.map((p, i) => [p, i]));
 
-// const sortedTasks = [...tasks].sort(
-//    (a,b)=> priorityRank[a.priority] - priorityRank[b.priority]
-// )
+const sortedTasks = [...tasks].sort(
+   (a,b)=> priorityRank[a.priority] - priorityRank[b.priority]
+)
 
-// console.log(sortedTasks.map(t => `${t.priority}: ${t.name}`).join("\n"));
+console.log(sortedTasks.map(t => `${t.priority}: ${t.name}`).join("\n"));
 
 //--------Custom Sorting -------//
-// const employees = [
-//   {
-//     id: 101,
-//     name: "Rahul",
-//     department: "Frontend",
-//     experience: 3,
-//     salary: 65000,
-//     status: "Active"
-//   },
-//   {
-//     id: 102,
-//     name: "Priya",
-//     department: "Backend",
-//     experience: 5,
-//     salary: 90000,
-//     status: "Inactive"
-//   },
-//   {
-//     id: 103,
-//     name: "Amit",
-//     department: "Frontend",
-//     experience: 2,
-//     salary: 55000,
-//     status: "Active"
-//   },
-//   {
-//     id: 104,
-//     name: "Sneha",
-//     department: "QA",
-//     experience: 4,
-//     salary: 70000,
-//     status: "Active"
-//   }
-// ];
+const employees = [
+  {
+    id: 101,
+    name: "Rahul",
+    department: "Frontend",
+    experience: 3,
+    salary: 65000,
+    status: "Active"
+  },
+  {
+    id: 102,
+    name: "Priya",
+    department: "Backend",
+    experience: 5,
+    salary: 90000,
+    status: "Inactive"
+  },
+  {
+    id: 103,
+    name: "Amit",
+    department: "Frontend",
+    experience: 2,
+    salary: 55000,
+    status: "Active"
+  },
+  {
+    id: 104,
+    name: "Sneha",
+    department: "QA",
+    experience: 4,
+    salary: 70000,
+    status: "Active"
+  }
+];
 
-// // employees.forEach(employees => {
-// //     console.log(employees.name);
-// // })
+// employees.forEach(employees => {
+//     console.log(employees.name);
+// })
 
-// // now i need to create a card where i have employee id name experience and status
+// now i need to create a card where i have employee id name experience and status
 
-// const employeeCards = employees.map(employees => ({
-//     id:employees.id,
-//     name: employees.name,
-//     department: employees.department,
-//     status : employees.status
-// }));
+const employeeCards = employees.map(employees => ({
+    id:employees.id,
+    name: employees.name,
+    department: employees.department,
+    status : employees.status
+}));
 
-// console.log(employeeCards);
+console.log(employeeCards);
 
-// const frontendEmployees = employees.filter(employees =>
-//     employees.salary <= 50000
-// );
-// if (frontendEmployees.length === 0) {
-//     console.log("Not found");
-// }else {
-//     const frontendEmployeeNames = frontendEmployees.map(employees => (
-//          employees.name
-//     ));
-//     console.log(frontendEmployeeNames)
-// }
+const frontendEmployees = employees.filter(employees =>
+    employees.salary <= 50000
+);
+if (frontendEmployees.length === 0) {
+    console.log("Not found");
+}else {
+    const frontendEmployeeNames = frontendEmployees.map(employees => (
+         employees.name
+    ));
+    console.log(frontendEmployeeNames)
+}
 
 //-----Shopping Cart Example------//
 
-// const cart = [
-//   {
-//     id: 1,
-//     name: "Wireless Mouse",
-//     price: 25,
-//     quantity: 2
-//   },
-//   {
-//     id: 2,
-//     name: "Mechanical Keyboard",
-//     price: 80,
-//     quantity: 1
-//   },
-//   {
-//     id: 3,
-//     name: "USB-C Cable",
-//     price: 15,
-//     quantity: 3
-//   }
-// ];
+const cart = [
+  {
+    id: 1,
+    name: "Wireless Mouse",
+    price: 25,
+    quantity: 2
+  },
+  {
+    id: 2,
+    name: "Mechanical Keyboard",
+    price: 80,
+    quantity: 1
+  },
+  {
+    id: 3,
+    name: "USB-C Cable",
+    price: 15,
+    quantity: 3
+  }
+];
 
-// const cartProducts = cart.forEach(product => {
-//   console.log(product.name)
-// });
+const cartProducts = cart.forEach(product => {
+  console.log(product.name)
+});
 
-// const productOnly = cart.map(product => product.name);
-// console.log(productOnly);
+const productOnly = cart.map(product => product.name);
+console.log(productOnly);
 
-// const productId = cart.find(product => product.id === 2);
-// console.log(productId)
+const productId = cart.find(product => product.id === 2);
+console.log(productId)
 
-// const productExists = cart.some(product => product.id === 3)
-// if(!productExists){
-//   console.log("Product is not there in cart");
-// }else {
-//   const proName = productExists.map(productExists => );
-//   console.log(proName)
-// }
+const productExists = cart.some(product => product.id === 3)
+if(!productExists){
+  console.log("Product is not there in cart");
+}else {
+  const proName = productExists.map(productExists => 
+  console.log(proName));
+}
 
 //-------- includes()-------//
 
 // includes(searchElement)
 // includes(searchElement, fromIndex)
 
-// const array = [1, 2, 3];
+const array = [1, 2, 3];
 
-// console.log(array.includes(2));
-// // Expected output: true
+console.log(array.includes(2));
+// Expected output: true
 
-// const pets = ["cat", "dog", "bat"];
+const pets = ["cat", "dog", "bat"];
 
-// console.log(pets.includes("cat"));
-// // Expected output: true
+console.log(pets.includes("cat"));
+// Expected output: true
 
-// console.log(pets.includes("at"));
-// // Expected output: false
+console.log(pets.includes("at"));
+// Expected output: false
 
-// const arr = [1, "2", "4", 9];
+const arr = [1, "2", "4", 9];
 
-// console.log(arr.includes(4));
+console.log(arr.includes(4));
 
-// const arr = ["a", "b", "c"];
+const arr = ["a", "b", "c"];
 
-// console.log(arr.includes("c", 3)); // false
-// console.log(arr.includes("c", 100)); // false
+console.log(arr.includes("c", 3)); // false
+console.log(arr.includes("c", 100)); // false
 
-// const arr = [1, 2, 3, 4];
-// console.log(arr.flatMap((x) => [x, x * 2]));
+
+//----------flatMap()-------//
+const arr = [1, 2, 3, 4];
+console.log(arr.flatMap((x) => [x, x * 2]));
 // is equivalent to
-// const n = arr.length;
-// const acc = new Array(n * 2);
-// for (let i = 0; i < n; i++) {
-//   const x = arr[i];
-//   acc[i * 2] = x;
-//   acc[i * 2 + 1] = x * 2;
-// }
-// [1, 2, 2, 4, 3, 6, 4, 8]
+const n = arr.length;
+const acc = new Array(n * 2);
+for (let i = 0; i < n; i++) {
+  const x = arr[i];
+  acc[i * 2] = x;
+  acc[i * 2 + 1] = x * 2;
+}
+[1, 2, 2, 4, 3, 6, 4, 8]
 
-// const orders = [
-//   {
-//     orderId: 101,
-//     customer: "Rahul",
-//     products: ["Mouse", "Keyboard"],
-//   },
-//   {
-//     orderId: 102,
-//     customer: "Priya",
-//     products: ["Monitor", "Cable"],
-//   },
-//   {
-//     orderId: 103,
-//     customer: "Amit",
-//     products: ["Laptop"],
-//   },
-// ];
+const orders = [
+  {
+    orderId: 101,
+    customer: "Rahul",
+    products: ["Mouse", "Keyboard"],
+  },
+  {
+    orderId: 102,
+    customer: "Priya",
+    products: ["Monitor", "Cable"],
+  },
+  {
+    orderId: 103,
+    customer: "Amit",
+    products: ["Laptop"],
+  },
+];
 
-// const itemSell = orders
-// .flatMap(orders => orders.products)
+const itemSell = orders
+.flatMap(orders => orders.products)
 
-// console.log(itemSell);
+console.log(itemSell);
 
-// const orders = [
-//   {
-//     orderId: 101,
-//     customer: "Rahul",
-//     products: [
-//       {
-//         id: 1,
-//         name: "Mouse",
-//         price: 25
-//       },
-//       {
-//         id: 2,
-//         name: "Keyboard",
-//         price: 80
-//       }
-//     ]
-//   },
-//   {
-//     orderId: 102,
-//     customer: "Priya",
-//     products: [
-//       {
-//         id: 3,
-//         name: "Monitor",
-//         price: 250
-//       },
-//       {
-//         id: 4,
-//         name: "USB Cable",
-//         price: 15
-//       }
-//     ]
-//   }
-// ];
+const orders = [
+  {
+    orderId: 101,
+    customer: "Rahul",
+    products: [
+      {
+        id: 1,
+        name: "Mouse",
+        price: 25
+      },
+      {
+        id: 2,
+        name: "Keyboard",
+        price: 80
+      }
+    ]
+  },
+  {
+    orderId: 102,
+    customer: "Priya",
+    products: [
+      {
+        id: 3,
+        name: "Monitor",
+        price: 250
+      },
+      {
+        id: 4,
+        name: "USB Cable",
+        price: 15
+      }
+    ]
+  }
+];
 
-// const productNames = orders.flatMap(
-//     order => order.products.map(product => product.name)
-// );
-// console.log(productNames);
+const names = orders.map(orders => {
+    console.log(orders.product.name)
+})
+
+const productNames = orders.flatMap(
+    order => order.products.map(product => product.name)
+);
+console.log(productNames);
 
 //---------- reduce()-------//
 
 // reduce(callbackFn)
 // reduce(callbackFn, initialValue)
 
-// const array = [1, 2, 3, 4];
+const array = [1, 2, 3, 4];
 
-// // 0 + 1 + 2 + 3 + 4
-// const initialValue = 0;
-// const sumWithInitial = array.reduce(
-//   (accumulator, currentValue) => accumulator + currentValue,
-//   initialValue,
-// );
-//console.log(sumWithInitial);
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue,
+);
+console.log(sumWithInitial);
 
-// const cart = [
-//   {
-//     id: 1,
-//     name: "Mouse",
-//     price: 25,
-//     quantity: 2
-//   },
-//   {
-//     id: 2,
-//     name: "Keyboard",
-//     price: 80,
-//     quantity: 1
-//   },
-//   {
-//     id: 3,
-//     name: "Cable",
-//     price: 15,
-//     quantity: 3
-//   }
-// ];
+const cart = [
+  {
+    id: 1,
+    name: "Mouse",
+    price: 25,
+    quantity: 2
+  },
+  {
+    id: 2,
+    name: "Keyboard",
+    price: 80,
+    quantity: 1
+  },
+  {
+    id: 3,
+    name: "Cable",
+    price: 15,
+    quantity: 3
+  }
+];
 
-// const total = cart.reduce(
-//     (sum, product) => sum + product.price * product.quantity,
-//     0
-// );
+const total = cart.reduce(
+    (sum, product) => sum + product.price * product.quantity,
+    0
+);
 
-// console.log("Total Bill:", total);
+console.log("Total Bill:", total);
 
 //----OBJECTS-------//
 
-//Object creation
+// Object creation
 // Object Literal Syntax (Preferred)
-// const user = {
-//   name: "Alice",
-//   age: 25,
-//   isPremium: true
-// };
+const user = {
+  name: "Alice",
+  age: 25,
+  isPremium: true
+};
 
 // Object Constructor Syntax
-// const admin = new Object();
-// admin.name = "Bob";
+const admin = new Object();
+admin.name = "Bob";
 
-// const user = {
-//   id: 1,
-//   name: "khrndknrkdn",
-//   age: 23,
-//   address : [
-//     "city", "state", 67
-//   ],
-//   department : {
-//     dep_name : "Computer Science",
-//     dep_id : "cs101101"
-//   }
-// };
+const user = {
+  id: 1,
+  name: "khrndknrkdn",
+  age: 23,
+  address : [
+    "city", "state", 67
+  ],
+  department : {
+    dep_name : "Computer Science",
+    dep_id : "cs101101"
+  }
+};
 
-// console.log(user);
+console.log(user);
 
-// const employee = new Object();
-// employee.name = "Uday";
-// console.log(employee)
+const employee = new Object();
+employee.name = "Uday";
+console.log(employee)
 
-// console.log(Object.values(user));
-// console.log(Object.keys(user));
-// console.log(user.address[1]);
-// console.log(user.department.dep_name);
+console.log(Object.values(user));
+console.log(Object.keys(user));
+console.log(user.address[1]);
+console.log(user.department.dep_name);
 
-// console.log(user)
+console.log(user)
 
-// async function getUser() {
-//   const response = await fetch("https://jsonplaceholder.typicode.com/users");
-//   const users = await response.json();
-//   const firstUser = users[0];
+async function getUser() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const users = await response.json();
+  const firstUser = users[0];
 
-//   console.log(firstUser.name);           // dot notation
-//   console.log(firstUser.email);
-//   console.log(firstUser.address.city);
-//   console.log(firstUser.company.name);
-// for (const [key,value] of Object.entries(firstUser)){
-//   console.log(`${key}`, value);
-// }
-// }
-// getUser();
+  console.log(firstUser.name);           // dot notation
+  console.log(firstUser.email);
+  console.log(firstUser.address.city);
+  console.log(firstUser.company.name);
+for (const [key,value] of Object.entries(firstUser)){
+  console.log(`${key}`, value);
+}
+}
+getUser();
 
-// async function getUsers() {
-//   console.time("fetch"); // start a stopwatch
+async function getUsers() {
+  console.time("fetch"); // start a stopwatch
 
-//   const response = await fetch("https://jsonplaceholder.typicode.com/users");
-//   const users = await response.json();
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const users = await response.json();
 
-//   console.timeEnd("fetch"); // stop the stopwatch, prints elapsed time
-//   console.log(users[0].name);
-// }
+  console.timeEnd("fetch"); // stop the stopwatch, prints elapsed time
+  console.log(users[0].name);
+}
 
-// getUsers();
+getUsers();
 
 
-// async function getNameAndEmail() {
-//   const response = await fetch("https://jsonplaceholder.typicode.com/users");
-//   const userData = await response.json();
-//   const firstUser = userData[0];
+async function getNameAndEmail() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const userData = await response.json();
+  const firstUser = userData[0];
 
-//   // console.log(Object.keys(firstUser));
-//   const data = userData.map((userData) => ({
-//     name : userData.name,
-//     email : userData.email
-//   }));
-//   console.log(data)
-// }
+  // console.log(Object.keys(firstUser));
+  const data = userData.map((userData) => ({
+    name : userData.name,
+    email : userData.email
+  }));
+  console.log(data)
+}
 
-// getNameAndEmail();
+getNameAndEmail();
 
 
 //---------findUserByUsername------//
-// async function findUserByUsername() {
-//   const response = await fetch("https://jsonplaceholder.typicode.com/users");
-//   const userData = await response.json();
+async function findUserByUsername() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const userData = await response.json();
 
-//   const userName = userData.find(userData => (  
-//     userData.username === "Bret"
-//   ));
-//   console.log(userName)
-// }
+  const userName = userData.find(userData => (  
+    userData.username === "Bret"
+  ));
+  console.log(userName)
+}
 
-// findUserByUsername();
+findUserByUsername();
 
 
 
-// async function findCityNames () {
-//   const response = await fetch("https://jsonplaceholder.typicode.com/users");
-//   const cityData = await response.json();
+async function findCityNames () {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const cityData = await response.json();
 
-//   const allCityNames = cityData.map(cityData => cityData.address.city);
-//   const cityNames = [...new Set(allCityNames)];
-//   console.log(cityNames);
-// }
+  const allCityNames = cityData.map(cityData => cityData.address.city);
+  const cityNames = [...new Set(allCityNames)];
+  console.log(cityNames);
+}
 
-// findCityNames();
+
+findCityNames();
 
 
 async function findCompanyByBs() {
@@ -1784,3 +1791,7 @@ async function findCompanyByBs() {
 }
 
 findCompanyByBs();
+
+
+const array = [1,24,45]
+console.log(array[3]);
