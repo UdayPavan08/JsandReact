@@ -1667,6 +1667,7 @@ const total = cart.reduce(
 
 console.log("Total Bill:", total);
 
+
 //----OBJECTS-------//
 
 // Object creation
