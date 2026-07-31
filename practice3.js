@@ -1,13 +1,13 @@
-const user = {
-  id: 1,
-  name: "khrndknrkdn",
-  age: 23,
-  address : ["city", "state", 67],
-  department : {
-    dep_name : "Computer Science",
-    dep_id : "cs101101"
-  }
-};
+// const user = {
+//   id: 1,
+//   name: "khrndknrkdn",
+//   age: 23,
+//   address : ["city", "state", 67],
+//   department : {
+//     dep_name : "Computer Science",
+//     dep_id : "cs101101"
+//   }
+// };
 
 
 // console.log(Object.keys(user));
@@ -33,11 +33,11 @@ const user = {
 // firstname => Ram
 // lastname => Prasad
 // website => geeksforgeeks 
-let map2 = new Map([
-    ["firstname", "Ram"],
-    ["lastname", "Prasad"],
-    ["website", "geeksforgeeks"]
-]);
+// let map2 = new Map([
+//     ["firstname", "Ram"],
+//     ["lastname", "Prasad"],
+//     ["website", "geeksforgeeks"]
+// ]);
 
 // console.log("Map2: ");
 // console.log(map2);
@@ -86,15 +86,25 @@ let map2 = new Map([
 // console.log(obj)
 
 
-const object = {
-  prop: "exists",
-};
+// const object = {
+//   prop: "exists",
+// };
 
-console.log(Object.hasOwn(object, "prop"));
-// Expected output: true
+// console.log(Object.hasOwn(object, "prop"));
+// // Expected output: true
 
-console.log(Object.hasOwn(object, "toString"));
+// console.log(Object.hasOwn(object, "toString"));
+// // Expected output: false
+
+// console.log(Object.hasOwn(object, "undeclaredPropertyValue"));
 // Expected output: false
 
-console.log(Object.hasOwn(object, "undeclaredPropertyValue"));
-// Expected output: false
+// Example 2: Checking null-prototype objects and properties set to undefined
+const users = Object.create(null);
+users.name = "Alice";
+users.age = undefined; // Property exists, but its value is undefined
+
+console.log(Object.hasOwn(users, "name"));  // true
+console.log(Object.hasOwn(users, "age"));   // true (property exists even though value is undefined)
+console.log(Object.hasOwn(users, "email")); // false
+
