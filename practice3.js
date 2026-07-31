@@ -76,11 +76,25 @@ let map2 = new Map([
 // console.log(obj)
 
 
-const obj = {
-    name : "alex"
+// const obj = {
+//     name : "alex"
+// };
+
+// Object.seal(obj);
+
+// obj.name = "john";
+// console.log(obj)
+
+
+const object = {
+  prop: "exists",
 };
 
-Object.seal(obj);
+console.log(Object.hasOwn(object, "prop"));
+// Expected output: true
 
-obj.name = "john";
-console.log(obj)
+console.log(Object.hasOwn(object, "toString"));
+// Expected output: false
+
+console.log(Object.hasOwn(object, "undeclaredPropertyValue"));
+// Expected output: false
