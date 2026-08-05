@@ -100,11 +100,17 @@
 // Expected output: false
 
 // Example 2: Checking null-prototype objects and properties set to undefined
-const users = Object.create(null);
-users.name = "Alice";
-users.age = undefined; // Property exists, but its value is undefined
+// const users = Object.create(null);
+// users.name = "Alice";
+// users.age = undefined; // Property exists, but its value is undefined
 
-console.log(Object.hasOwn(users, "name"));  // true
-console.log(Object.hasOwn(users, "age"));   // true (property exists even though value is undefined)
-console.log(Object.hasOwn(users, "email")); // false
+// console.log(Object.hasOwn(users, "name"));  // true
+// console.log(Object.hasOwn(users, "age"));   // true (property exists even though value is undefined)
+// console.log(Object.hasOwn(users, "email")); // false
+
+let a = { name: "Alice" };
+let b = a;
+b.name = "Bob";
+
+console.log(a.name);
 
